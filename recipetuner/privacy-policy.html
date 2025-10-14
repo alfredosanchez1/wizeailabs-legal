@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Política de Privacidad | RecipeTuner</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <style>
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+        .lang-toggle:hover {
+            background: #0056b3;
+        }
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <button class="lang-toggle" onclick="toggleLanguage()">
+        <span id="toggle-text">English</span>
+    </button>
+
+    <!-- ESPAÑOL -->
+    <div id="es-content" class="lang-content active">
+        <div class="container">
+            <h1>Política de Privacidad</h1>
+            <p class="subtitle">RecipeTuner by WizeAI Labs</p>
+            <p class="last-updated"><strong>Última actualización:</strong> 14 de octubre de 2025</p>
+
+            <section>
+                <h2>1. Introducción</h2>
+                <p>En WizeAI Labs ("nosotros", "nuestro" o "la empresa"), desarrolladores de RecipeTuner, respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta Política de Privacidad explica qué información recopilamos, cómo la usamos, y tus derechos relacionados con tus datos.</p>
+                <p>RecipeTuner es una aplicación móvil que te permite escanear, digitalizar, ajustar y gestionar recetas de cocina utilizando inteligencia artificial.</p>
+            </section>
+
+            <section>
+                <h2>2. Información que Recopilamos</h2>
+
+                <h3>2.1 Información que nos proporcionas directamente:</h3>
+                <ul>
+                    <li><strong>Información de cuenta:</strong> Nombre, dirección de correo electrónico, contraseña (encriptada)</li>
+                    <li><strong>Recetas:</strong> Texto e imágenes de recetas que escaneas o ingresas manualmente</li>
+                    <li><strong>Preferencias dietéticas:</strong> Alergias, restricciones alimentarias, preferencias de cocina</li>
+                    <li><strong>Información de pago:</strong> Procesada de forma segura por Stripe (no almacenamos datos de tarjetas)</li>
+                </ul>
+
+                <h3>2.2 Información recopilada automáticamente:</h3>
+                <ul>
+                    <li><strong>Datos de uso:</strong> Funciones que utilizas, tiempo de uso, interacciones con la app</li>
+                    <li><strong>Información del dispositivo:</strong> Modelo, sistema operativo, versión de la app, idioma</li>
+                    <li><strong>Datos biométricos:</strong> Face ID / Touch ID (procesados localmente en tu dispositivo, nunca enviados a nuestros servidores)</li>
+                    <li><strong>Fotos:</strong> Imágenes de recetas capturadas con la cámara o seleccionadas de tu galería (solo con tu permiso)</li>
+                </ul>
+
+                <h3>2.3 Información de servicios de terceros:</h3>
+                <p>Cuando utilizas RecipeTuner, ciertos datos pueden ser procesados por los siguientes servicios:</p>
+                <ul>
+                    <li><strong>OpenAI:</strong> Imágenes y texto de recetas para procesamiento con IA (GPT-4 Vision)</li>
+                    <li><strong>Supabase:</strong> Almacenamiento seguro de tus recetas y datos de cuenta</li>
+                    <li><strong>Stripe:</strong> Procesamiento seguro de pagos y suscripciones</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. Cómo Utilizamos tu Información</h2>
+                <p>Utilizamos la información recopilada para:</p>
+                <ul>
+                    <li>Proporcionar y mejorar las funcionalidades de RecipeTuner</li>
+                    <li>Procesar recetas escaneadas mediante inteligencia artificial (OpenAI GPT-4 Vision)</li>
+                    <li>Guardar y sincronizar tus recetas en la nube</li>
+                    <li>Personalizar tu experiencia según tus preferencias dietéticas</li>
+                    <li>Procesar pagos y gestionar suscripciones</li>
+                    <li>Autenticarte de forma segura mediante Face ID / Touch ID</li>
+                    <li>Enviar notificaciones importantes sobre tu cuenta o la app</li>
+                    <li>Analizar el uso de la app para mejorar nuestros servicios</li>
+                    <li>Cumplir con obligaciones legales</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Compartir Información</h2>
+                <p><strong>NO vendemos ni alquilamos tu información personal a terceros.</strong></p>
+
+                <h3>Compartimos información únicamente en los siguientes casos:</h3>
+                <ul>
+                    <li><strong>Proveedores de servicios:</strong> OpenAI (procesamiento de recetas), Supabase (almacenamiento), Stripe (pagos)</li>
+                    <li><strong>Requisitos legales:</strong> Cuando sea requerido por ley, orden judicial o proceso legal</li>
+                    <li><strong>Protección de derechos:</strong> Para proteger nuestros derechos, privacidad, seguridad o propiedad</li>
+                    <li><strong>Con tu consentimiento:</strong> En cualquier otro caso con tu autorización explícita</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. Seguridad de los Datos</h2>
+                <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información:</p>
+                <ul>
+                    <li>Encriptación de datos en tránsito (HTTPS/TLS)</li>
+                    <li>Encriptación de contraseñas con algoritmos seguros</li>
+                    <li>Autenticación biométrica local (Face ID no se envía a servidores)</li>
+                    <li>Almacenamiento seguro en Supabase con encriptación</li>
+                    <li>Acceso restringido a datos personales solo para personal autorizado</li>
+                    <li>Monitoreo regular de vulnerabilidades de seguridad</li>
+                </ul>
+                <p>Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro. Aunque nos esforzamos por proteger tus datos, no podemos garantizar seguridad absoluta.</p>
+            </section>
+
+            <section>
+                <h2>6. Tus Derechos</h2>
+                <p>Dependiendo de tu ubicación geográfica, puedes tener los siguientes derechos:</p>
+                <ul>
+                    <li><strong>Acceso:</strong> Solicitar una copia de tus datos personales</li>
+                    <li><strong>Corrección:</strong> Solicitar corrección de datos inexactos</li>
+                    <li><strong>Eliminación:</strong> Solicitar la eliminación de tus datos personales</li>
+                    <li><strong>Portabilidad:</strong> Recibir tus datos en formato estructurado</li>
+                    <li><strong>Oposición:</strong> Oponerte al procesamiento de tus datos</li>
+                    <li><strong>Restricción:</strong> Solicitar restricción del procesamiento</li>
+                    <li><strong>Revocación:</strong> Retirar consentimiento en cualquier momento</li>
+                </ul>
+                <p>Para ejercer estos derechos, contáctanos en: <strong>privacy@wizeailabs.com</strong></p>
+            </section>
+
+            <section>
+                <h2>7. Retención de Datos</h2>
+                <p>Conservamos tu información personal mientras:</p>
+                <ul>
+                    <li>Mantengas una cuenta activa en RecipeTuner</li>
+                    <li>Sea necesario para proporcionar nuestros servicios</li>
+                    <li>Sea requerido por obligaciones legales, fiscales o contables</li>
+                </ul>
+                <p>Cuando elimines tu cuenta, borraremos tus datos personales en un plazo de 30 días, excepto información que debamos retener por ley.</p>
+            </section>
+
+            <section>
+                <h2>8. Permisos de la Aplicación</h2>
+                <p>RecipeTuner solicita los siguientes permisos en iOS:</p>
+                <ul>
+                    <li><strong>Cámara:</strong> Para escanear recetas de libros, revistas o pantallas</li>
+                    <li><strong>Galería de fotos:</strong> Para seleccionar imágenes de recetas guardadas</li>
+                    <li><strong>Recordatorios:</strong> Para exportar listas de ingredientes e instrucciones de cocina a la app de Recordatorios (opcional)</li>
+                    <li><strong>Face ID / Touch ID:</strong> Para autenticación rápida y segura sin necesidad de contraseña</li>
+                </ul>
+                <p>Puedes revocar estos permisos en cualquier momento desde Configuración de iOS, aunque algunas funciones pueden no estar disponibles sin ellos.</p>
+            </section>
+
+            <section>
+                <h2>9. Cookies y Tecnologías Similares</h2>
+                <p>RecipeTuner utiliza tecnologías de almacenamiento local para:</p>
+                <ul>
+                    <li>Mantener tu sesión activa</li>
+                    <li>Recordar tus preferencias de la app</li>
+                    <li>Mejorar el rendimiento y funcionalidad</li>
+                </ul>
+                <p>No utilizamos cookies de publicidad ni tracking de terceros.</p>
+            </section>
+
+            <section>
+                <h2>10. Transferencias Internacionales de Datos</h2>
+                <p>Tus datos pueden ser transferidos y procesados en países fuera de tu país de residencia, incluyendo Estados Unidos y la Unión Europea, donde se encuentran nuestros proveedores de servicios (OpenAI, Supabase, Stripe).</p>
+                <p>Nos aseguramos de que estas transferencias cumplan con las leyes aplicables de protección de datos, incluyendo GDPR (Reglamento General de Protección de Datos de la UE).</p>
+            </section>
+
+            <section>
+                <h2>11. Privacidad de Menores</h2>
+                <p>RecipeTuner no está dirigido a menores de 13 años. No recopilamos intencionalmente información personal de menores de 13 años. Si descubrimos que hemos recopilado datos de un menor de 13 años, eliminaremos esa información de inmediato.</p>
+                <p>Si eres padre o tutor y crees que tu hijo nos ha proporcionado información personal, contáctanos en: <strong>privacy@wizeailabs.com</strong></p>
+            </section>
+
+            <section>
+                <h2>12. Cambios a esta Política</h2>
+                <p>Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos sobre cambios significativos mediante:</p>
+                <ul>
+                    <li>Notificación en la aplicación</li>
+                    <li>Correo electrónico a tu dirección registrada</li>
+                    <li>Actualización de la fecha de "Última actualización" en esta página</li>
+                </ul>
+                <p>Te recomendamos revisar esta política regularmente para mantenerte informado sobre cómo protegemos tu información.</p>
+            </section>
+
+            <section>
+                <h2>13. Información de Contacto</h2>
+                <p>Si tienes preguntas, inquietudes o solicitudes relacionadas con esta Política de Privacidad o tus datos personales, contáctanos:</p>
+                <ul>
+                    <li><strong>Email:</strong> privacy@wizeailabs.com</li>
+                    <li><strong>Soporte:</strong> support@wizeailabs.com</li>
+                    <li><strong>Empresa:</strong> WizeAI Labs</li>
+                    <li><strong>Sitio web:</strong> <a href="https://wizeailabs.com">https://wizeailabs.com</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>14. Información Específica para Usuarios en la Unión Europea</h2>
+                <p>Si te encuentras en la Unión Europea, tienes derechos adicionales bajo el GDPR:</p>
+                <ul>
+                    <li>Base legal para procesamiento: Consentimiento, ejecución de contrato, interés legítimo</li>
+                    <li>Derecho a presentar queja ante autoridad de protección de datos de tu país</li>
+                    <li>Derecho a oponerte al procesamiento basado en interés legítimo</li>
+                    <li>Derecho a no estar sujeto a decisiones automatizadas</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>15. Información Específica para Usuarios en California</h2>
+                <p>Bajo la CCPA (California Consumer Privacy Act), los residentes de California tienen derechos adicionales:</p>
+                <ul>
+                    <li>Derecho a saber qué información personal se recopila, usa, comparte o vende</li>
+                    <li>Derecho a eliminar información personal</li>
+                    <li>Derecho a optar por no vender información personal (no vendemos datos)</li>
+                    <li>Derecho a no discriminación por ejercer derechos de privacidad</li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 WizeAI Labs. Todos los derechos reservados.</p>
+                <p><a href="https://legal.wizeailabs.com/recipetuner/terms-of-service">Términos de Servicio</a> | <a href="https://wizeailabs.com">WizeAI Labs</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="en-content" class="lang-content">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">RecipeTuner by WizeAI Labs</p>
+            <p class="last-updated"><strong>Last updated:</strong> October 14, 2025</p>
+
+            <section>
+                <h2>1. Introduction</h2>
+                <p>At WizeAI Labs ("we", "our" or "the company"), developers of RecipeTuner, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains what information we collect, how we use it, and your rights regarding your data.</p>
+                <p>RecipeTuner is a mobile application that allows you to scan, digitize, adjust, and manage cooking recipes using artificial intelligence.</p>
+            </section>
+
+            <section>
+                <h2>2. Information We Collect</h2>
+
+                <h3>2.1 Information you provide directly:</h3>
+                <ul>
+                    <li><strong>Account information:</strong> Name, email address, password (encrypted)</li>
+                    <li><strong>Recipes:</strong> Text and images of recipes you scan or manually enter</li>
+                    <li><strong>Dietary preferences:</strong> Allergies, dietary restrictions, cooking preferences</li>
+                    <li><strong>Payment information:</strong> Securely processed by Stripe (we do not store card data)</li>
+                </ul>
+
+                <h3>2.2 Automatically collected information:</h3>
+                <ul>
+                    <li><strong>Usage data:</strong> Features you use, usage time, app interactions</li>
+                    <li><strong>Device information:</strong> Model, operating system, app version, language</li>
+                    <li><strong>Biometric data:</strong> Face ID / Touch ID (processed locally on your device, never sent to our servers)</li>
+                    <li><strong>Photos:</strong> Recipe images captured with camera or selected from your gallery (only with your permission)</li>
+                </ul>
+
+                <h3>2.3 Third-party service information:</h3>
+                <p>When you use RecipeTuner, certain data may be processed by the following services:</p>
+                <ul>
+                    <li><strong>OpenAI:</strong> Recipe images and text for AI processing (GPT-4 Vision)</li>
+                    <li><strong>Supabase:</strong> Secure storage of your recipes and account data</li>
+                    <li><strong>Stripe:</strong> Secure processing of payments and subscriptions</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>3. How We Use Your Information</h2>
+                <p>We use the collected information to:</p>
+                <ul>
+                    <li>Provide and improve RecipeTuner's functionality</li>
+                    <li>Process scanned recipes using artificial intelligence (OpenAI GPT-4 Vision)</li>
+                    <li>Save and sync your recipes in the cloud</li>
+                    <li>Personalize your experience based on your dietary preferences</li>
+                    <li>Process payments and manage subscriptions</li>
+                    <li>Authenticate you securely via Face ID / Touch ID</li>
+                    <li>Send important notifications about your account or the app</li>
+                    <li>Analyze app usage to improve our services</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>4. Sharing Information</h2>
+                <p><strong>WE DO NOT sell or rent your personal information to third parties.</strong></p>
+
+                <h3>We share information only in the following cases:</h3>
+                <ul>
+                    <li><strong>Service providers:</strong> OpenAI (recipe processing), Supabase (storage), Stripe (payments)</li>
+                    <li><strong>Legal requirements:</strong> When required by law, court order, or legal process</li>
+                    <li><strong>Rights protection:</strong> To protect our rights, privacy, security, or property</li>
+                    <li><strong>With your consent:</strong> In any other case with your explicit authorization</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>5. Data Security</h2>
+                <p>We implement technical and organizational security measures to protect your information:</p>
+                <ul>
+                    <li>Data encryption in transit (HTTPS/TLS)</li>
+                    <li>Password encryption with secure algorithms</li>
+                    <li>Local biometric authentication (Face ID not sent to servers)</li>
+                    <li>Secure storage in Supabase with encryption</li>
+                    <li>Restricted access to personal data only for authorized personnel</li>
+                    <li>Regular monitoring of security vulnerabilities</li>
+                </ul>
+                <p>However, no method of Internet transmission or electronic storage is 100% secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+            </section>
+
+            <section>
+                <h2>6. Your Rights</h2>
+                <p>Depending on your geographic location, you may have the following rights:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request a copy of your personal data</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate data</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+                    <li><strong>Portability:</strong> Receive your data in a structured format</li>
+                    <li><strong>Objection:</strong> Object to the processing of your data</li>
+                    <li><strong>Restriction:</strong> Request restriction of processing</li>
+                    <li><strong>Withdrawal:</strong> Withdraw consent at any time</li>
+                </ul>
+                <p>To exercise these rights, contact us at: <strong>privacy@wizeailabs.com</strong></p>
+            </section>
+
+            <section>
+                <h2>7. Data Retention</h2>
+                <p>We retain your personal information while:</p>
+                <ul>
+                    <li>You maintain an active RecipeTuner account</li>
+                    <li>It is necessary to provide our services</li>
+                    <li>It is required by legal, tax, or accounting obligations</li>
+                </ul>
+                <p>When you delete your account, we will delete your personal data within 30 days, except information we must retain by law.</p>
+            </section>
+
+            <section>
+                <h2>8. App Permissions</h2>
+                <p>RecipeTuner requests the following permissions on iOS:</p>
+                <ul>
+                    <li><strong>Camera:</strong> To scan recipes from books, magazines, or screens</li>
+                    <li><strong>Photo Gallery:</strong> To select saved recipe images</li>
+                    <li><strong>Reminders:</strong> To export ingredient lists and cooking instructions to the Reminders app (optional)</li>
+                    <li><strong>Face ID / Touch ID:</strong> For quick and secure authentication without password</li>
+                </ul>
+                <p>You can revoke these permissions at any time from iOS Settings, although some features may not be available without them.</p>
+            </section>
+
+            <section>
+                <h2>9. Cookies and Similar Technologies</h2>
+                <p>RecipeTuner uses local storage technologies to:</p>
+                <ul>
+                    <li>Keep your session active</li>
+                    <li>Remember your app preferences</li>
+                    <li>Improve performance and functionality</li>
+                </ul>
+                <p>We do not use advertising cookies or third-party tracking.</p>
+            </section>
+
+            <section>
+                <h2>10. International Data Transfers</h2>
+                <p>Your data may be transferred and processed in countries outside your country of residence, including the United States and the European Union, where our service providers are located (OpenAI, Supabase, Stripe).</p>
+                <p>We ensure that these transfers comply with applicable data protection laws, including GDPR (General Data Protection Regulation).</p>
+            </section>
+
+            <section>
+                <h2>11. Children's Privacy</h2>
+                <p>RecipeTuner is not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If we discover that we have collected data from a child under 13, we will delete that information immediately.</p>
+                <p>If you are a parent or guardian and believe your child has provided us with personal information, contact us at: <strong>privacy@wizeailabs.com</strong></p>
+            </section>
+
+            <section>
+                <h2>12. Changes to this Policy</h2>
+                <p>We may update this Privacy Policy periodically. We will notify you of significant changes through:</p>
+                <ul>
+                    <li>In-app notification</li>
+                    <li>Email to your registered address</li>
+                    <li>Update of the "Last updated" date on this page</li>
+                </ul>
+                <p>We recommend reviewing this policy regularly to stay informed about how we protect your information.</p>
+            </section>
+
+            <section>
+                <h2>13. Contact Information</h2>
+                <p>If you have questions, concerns, or requests related to this Privacy Policy or your personal data, contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> privacy@wizeailabs.com</li>
+                    <li><strong>Support:</strong> support@wizeailabs.com</li>
+                    <li><strong>Company:</strong> WizeAI Labs</li>
+                    <li><strong>Website:</strong> <a href="https://wizeailabs.com">https://wizeailabs.com</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>14. Specific Information for European Union Users</h2>
+                <p>If you are in the European Union, you have additional rights under GDPR:</p>
+                <ul>
+                    <li>Legal basis for processing: Consent, contract execution, legitimate interest</li>
+                    <li>Right to lodge a complaint with your country's data protection authority</li>
+                    <li>Right to object to processing based on legitimate interest</li>
+                    <li>Right not to be subject to automated decisions</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>15. Specific Information for California Users</h2>
+                <p>Under the CCPA (California Consumer Privacy Act), California residents have additional rights:</p>
+                <ul>
+                    <li>Right to know what personal information is collected, used, shared, or sold</li>
+                    <li>Right to delete personal information</li>
+                    <li>Right to opt-out of selling personal information (we do not sell data)</li>
+                    <li>Right to non-discrimination for exercising privacy rights</li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 WizeAI Labs. All rights reserved.</p>
+                <p><a href="https://legal.wizeailabs.com/recipetuner/terms-of-service">Terms of Service</a> | <a href="https://wizeailabs.com">WizeAI Labs</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            const esContent = document.getElementById('es-content');
+            const enContent = document.getElementById('en-content');
+            const toggleText = document.getElementById('toggle-text');
+
+            if (currentLang === 'es') {
+                esContent.classList.remove('active');
+                enContent.classList.add('active');
+                toggleText.textContent = 'Español';
+                currentLang = 'en';
+                document.documentElement.lang = 'en';
+            } else {
+                enContent.classList.remove('active');
+                esContent.classList.add('active');
+                toggleText.textContent = 'English';
+                currentLang = 'es';
+                document.documentElement.lang = 'es';
+            }
+        }
+
+        // Auto-detect language on load
+        window.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('en') && currentLang === 'es') {
+                toggleLanguage();
+            }
+        });
+    </script>
+</body>
+</html>

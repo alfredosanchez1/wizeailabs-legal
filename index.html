@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Documents | WizeAI Labs</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .product-card h2 {
+            font-size: 1.75rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: none;
+            color: var(--primary-color);
+        }
+
+        .product-card p {
+            margin-bottom: 20px;
+            color: var(--text-medium);
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--primary-hover);
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .footer-main {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-main p {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            color: var(--text-medium);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>WizeAI Labs</h1>
+            <p>Legal Documents & Policies</p>
+        </div>
+
+        <div class="products">
+            <!-- RecipeTuner -->
+            <div class="product-card">
+                <h2>RecipeTuner</h2>
+                <p>Scan, digitize, and manage your cooking recipes with AI-powered intelligence.</p>
+                <div class="links">
+                    <a href="/recipetuner/privacy-policy" class="btn">Privacy Policy / Política de Privacidad</a>
+                    <a href="/recipetuner/terms-of-service" class="btn btn-secondary">Terms of Service / Términos de Servicio</a>
+                </div>
+            </div>
+
+            <!-- CaloriSnap (Placeholder for future) -->
+            <div class="product-card">
+                <h2>CaloriSnap</h2>
+                <p>Track your nutrition and calories with intelligent food recognition.</p>
+                <div class="links">
+                    <a href="https://github.com/alfredosanchez1/calorisnap-privacy" class="btn" target="_blank">Privacy Policy / Política de Privacidad</a>
+                    <a href="#" class="btn btn-secondary" style="opacity: 0.5; pointer-events: none;">Terms of Service (Coming Soon)</a>
+                </div>
+            </div>
+
+            <!-- Future Products -->
+            <div class="product-card" style="opacity: 0.6;">
+                <h2>More Products Coming Soon</h2>
+                <p>Stay tuned for more innovative AI-powered applications from WizeAI Labs.</p>
+            </div>
+        </div>
+
+        <div class="footer-main">
+            <p>&copy; 2025 WizeAI Labs. All rights reserved.</p>
+            <p>Innovative AI solutions for everyday life</p>
+            <div class="footer-links">
+                <a href="https://wizeailabs.com">Website</a>
+                <a href="mailto:support@wizeailabs.com">Support</a>
+                <a href="mailto:legal@wizeailabs.com">Legal</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
