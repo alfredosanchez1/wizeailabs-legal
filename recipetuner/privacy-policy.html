@@ -43,7 +43,7 @@
         <div class="container">
             <h1>Política de Privacidad</h1>
             <p class="subtitle">RecipeTuner by WizeAI Labs</p>
-            <p class="last-updated"><strong>Última actualización:</strong> 14 de octubre de 2025</p>
+            <p class="last-updated"><strong>Última actualización:</strong> 30 de octubre de 2025</p>
 
             <section>
                 <h2>1. Introducción</h2>
@@ -66,7 +66,6 @@
                 <ul>
                     <li><strong>Datos de uso:</strong> Funciones que utilizas, tiempo de uso, interacciones con la app</li>
                     <li><strong>Información del dispositivo:</strong> Modelo, sistema operativo, versión de la app, idioma</li>
-                    <li><strong>Datos biométricos:</strong> Face ID / Touch ID (procesados localmente en tu dispositivo, nunca enviados a nuestros servidores)</li>
                     <li><strong>Fotos:</strong> Imágenes de recetas capturadas con la cámara o seleccionadas de tu galería (solo con tu permiso)</li>
                 </ul>
 
@@ -79,8 +78,96 @@
                 </ul>
             </section>
 
+            <section id="biometric-data">
+                <h2>3. Datos Biométricos y Autenticación</h2>
+
+                <h3>Uso de Face ID / Touch ID</h3>
+                <p>RecipeTuner utiliza Face ID y Touch ID exclusivamente para autenticación local del dispositivo, proporcionando acceso seguro y conveniente a tu cuenta.</p>
+
+                <h3>Aclaraciones Importantes</h3>
+                <p><strong>NO recopilamos, procesamos ni almacenamos ningún dato biométrico:</strong></p>
+
+                <ul>
+                    <li>✅ <strong>Sin Recopilación:</strong> No capturamos ni recopilamos datos de reconocimiento facial, huellas dactilares o cualquier otra información biométrica</li>
+                    <li>✅ <strong>iOS lo Maneja Todo:</strong> Face ID y Touch ID son manejados completamente por iOS en el Secure Enclave de tu dispositivo (un chip de seguridad dedicado)</li>
+                    <li>✅ <strong>Solo Recibimos Éxito/Fallo:</strong> Nuestra app solo recibe una respuesta simple de "autenticación exitosa" o "autenticación fallida" de iOS</li>
+                    <li>✅ <strong>Los Datos Nunca Salen de Tu Dispositivo:</strong> Ninguna información biométrica sale de tu dispositivo ni se transmite a nuestros servidores</li>
+                    <li>✅ <strong>No se Comparte con Nadie:</strong> No compartimos datos biométricos con terceros porque nunca tenemos acceso a ellos</li>
+                </ul>
+
+                <h3>Cómo Funciona</h3>
+                <p>Cuando activas Face ID/Touch ID en RecipeTuner:</p>
+                <ol>
+                    <li>Tocas "Desbloquear con Face ID"</li>
+                    <li>iOS te solicita autenticarte usando tus datos biométricos registrados</li>
+                    <li>iOS procesa la autenticación completamente dentro del Secure Enclave</li>
+                    <li>iOS le informa a RecipeTuner solo si la autenticación fue exitosa o falló</li>
+                    <li>Si es exitosa, obtienes acceso a la app</li>
+                </ol>
+                <p><strong>En ningún momento RecipeTuner accede, ve o almacena tus datos biométricos.</strong></p>
+
+                <h3>Ubicación de Almacenamiento de Datos</h3>
+                <p><strong>Almacenamiento de datos biométricos:</strong> Secure Enclave de tu dispositivo (gestionado por Apple)</p>
+                <p><strong>Almacenamiento de RecipeTuner:</strong> Ninguno</p>
+
+                <p>Todos los datos biométricos (patrones de reconocimiento facial, plantillas de huellas dactilares) se almacenan exclusivamente en el Secure Enclave de tu dispositivo, que es:</p>
+                <ul>
+                    <li>Encriptado por hardware</li>
+                    <li>Aislado del procesador principal</li>
+                    <li>Inaccesible para todas las aplicaciones (incluido RecipeTuner)</li>
+                    <li>Gestionado completamente por el sistema operativo de Apple</li>
+                </ul>
+
+                <h3>Control del Usuario</h3>
+                <p>Tienes control completo sobre la autenticación biométrica:</p>
+
+                <p><strong>Activar/Desactivar:</strong> Puedes activar o desactivar Face ID/Touch ID para RecipeTuner en cualquier momento en:</p>
+                <ul>
+                    <li>Ajustes de iOS → RecipeTuner → Face ID y Código, o</li>
+                    <li>Ajustes de la app RecipeTuner → Seguridad</li>
+                </ul>
+
+                <p><strong>Autenticación Alternativa:</strong> Siempre puedes usar tu correo/contraseña para iniciar sesión en lugar de autenticación biométrica</p>
+
+                <p><strong>Eliminar Datos Biométricos:</strong> Para eliminar tus datos biométricos, ve a Ajustes de iOS → Face ID y Código → Restablecer Face ID (gestionado por Apple, no por RecipeTuner)</p>
+
+                <h3>Acceso de Terceros</h3>
+                <p><strong>Ninguno.</strong></p>
+                <p>Apple no comparte datos biométricos con desarrolladores de apps o terceros. Tus datos de Face ID/Touch ID están protegidos por la arquitectura de seguridad de Apple y nunca son accesibles para RecipeTuner o cualquier otra aplicación.</p>
+
+                <h3>Retención de Datos</h3>
+                <p><strong>Retención de RecipeTuner:</strong> No aplica - no recopilamos datos biométricos</p>
+                <p><strong>Retención de Apple:</strong> Apple gestiona toda la retención de datos biométricos según sus políticas de privacidad. Cuando eliminas Face ID de tu dispositivo, Apple elimina las plantillas biométricas.</p>
+
+                <h3>Implementación Técnica</h3>
+                <p>RecipeTuner utiliza la API LocalAuthentication de Expo, que es un wrapper seguro del framework LocalAuthentication de Apple. Esto garantiza:</p>
+                <ul>
+                    <li>Prácticas de seguridad estándar de la industria</li>
+                    <li>Sin acceso directo a datos biométricos</li>
+                    <li>Cumplimiento con las guías de seguridad de Apple</li>
+                    <li>Protección de tu privacidad</li>
+                </ul>
+
+                <h3>Cumplimiento</h3>
+                <p>Nuestro uso de autenticación biométrica cumple con:</p>
+                <ul>
+                    <li>Guías de Revisión de App Store de Apple (Guideline 2.5.13)</li>
+                    <li>Requisitos del GDPR (sin procesamiento de datos biométricos)</li>
+                    <li>Requisitos de CCPA (sin recopilación de datos biométricos)</li>
+                    <li>Guías de Seguridad de la Plataforma Apple</li>
+                </ul>
+
+                <h3>¿Preguntas sobre Datos Biométricos?</h3>
+                <p>Si tienes preguntas sobre cómo Apple maneja Face ID/Touch ID, consulta:</p>
+                <ul>
+                    <li><a href="https://support.apple.com/guide/security/face-id-and-touch-id-sec067eb8d70/web" target="_blank">Guía de Seguridad de Face ID de Apple</a></li>
+                    <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Política de Privacidad de Apple</a></li>
+                </ul>
+                <p>Para preguntas sobre las prácticas de seguridad de RecipeTuner, contáctanos en: <a href="mailto:privacy@wizeailabs.com">privacy@wizeailabs.com</a></p>
+            </section>
+
             <section>
-                <h2>3. Cómo Utilizamos tu Información</h2>
+                <h2>4. Cómo Utilizamos tu Información</h2>
                 <p>Utilizamos la información recopilada para:</p>
                 <ul>
                     <li>Proporcionar y mejorar las funcionalidades de RecipeTuner</li>
@@ -96,7 +183,7 @@
             </section>
 
             <section>
-                <h2>4. Compartir Información</h2>
+                <h2>5. Compartir Información</h2>
                 <p><strong>NO vendemos ni alquilamos tu información personal a terceros.</strong></p>
 
                 <h3>Compartimos información únicamente en los siguientes casos:</h3>
@@ -109,7 +196,7 @@
             </section>
 
             <section>
-                <h2>5. Seguridad de los Datos</h2>
+                <h2>6. Seguridad de los Datos</h2>
                 <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información:</p>
                 <ul>
                     <li>Encriptación de datos en tránsito (HTTPS/TLS)</li>
@@ -123,7 +210,7 @@
             </section>
 
             <section>
-                <h2>6. Tus Derechos</h2>
+                <h2>7. Tus Derechos</h2>
                 <p>Dependiendo de tu ubicación geográfica, puedes tener los siguientes derechos:</p>
                 <ul>
                     <li><strong>Acceso:</strong> Solicitar una copia de tus datos personales</li>
@@ -138,7 +225,7 @@
             </section>
 
             <section>
-                <h2>7. Retención de Datos</h2>
+                <h2>8. Retención de Datos</h2>
                 <p>Conservamos tu información personal mientras:</p>
                 <ul>
                     <li>Mantengas una cuenta activa en RecipeTuner</li>
@@ -149,7 +236,7 @@
             </section>
 
             <section>
-                <h2>8. Permisos de la Aplicación</h2>
+                <h2>9. Permisos de la Aplicación</h2>
                 <p>RecipeTuner solicita los siguientes permisos en iOS:</p>
                 <ul>
                     <li><strong>Cámara:</strong> Para escanear recetas de libros, revistas o pantallas</li>
@@ -161,7 +248,7 @@
             </section>
 
             <section>
-                <h2>9. Cookies y Tecnologías Similares</h2>
+                <h2>10. Cookies y Tecnologías Similares</h2>
                 <p>RecipeTuner utiliza tecnologías de almacenamiento local para:</p>
                 <ul>
                     <li>Mantener tu sesión activa</li>
@@ -172,19 +259,19 @@
             </section>
 
             <section>
-                <h2>10. Transferencias Internacionales de Datos</h2>
+                <h2>11. Transferencias Internacionales de Datos</h2>
                 <p>Tus datos pueden ser transferidos y procesados en países fuera de tu país de residencia, incluyendo Estados Unidos y la Unión Europea, donde se encuentran nuestros proveedores de servicios (OpenAI, Supabase, Stripe).</p>
                 <p>Nos aseguramos de que estas transferencias cumplan con las leyes aplicables de protección de datos, incluyendo GDPR (Reglamento General de Protección de Datos de la UE).</p>
             </section>
 
             <section>
-                <h2>11. Privacidad de Menores</h2>
+                <h2>12. Privacidad de Menores</h2>
                 <p>RecipeTuner no está dirigido a menores de 13 años. No recopilamos intencionalmente información personal de menores de 13 años. Si descubrimos que hemos recopilado datos de un menor de 13 años, eliminaremos esa información de inmediato.</p>
                 <p>Si eres padre o tutor y crees que tu hijo nos ha proporcionado información personal, contáctanos en: <strong>privacy@wizeailabs.com</strong></p>
             </section>
 
             <section>
-                <h2>12. Cambios a esta Política</h2>
+                <h2>13. Cambios a esta Política</h2>
                 <p>Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos sobre cambios significativos mediante:</p>
                 <ul>
                     <li>Notificación en la aplicación</li>
@@ -195,7 +282,7 @@
             </section>
 
             <section>
-                <h2>13. Información de Contacto</h2>
+                <h2>14. Información de Contacto</h2>
                 <p>Si tienes preguntas, inquietudes o solicitudes relacionadas con esta Política de Privacidad o tus datos personales, contáctanos:</p>
                 <ul>
                     <li><strong>Email:</strong> privacy@wizeailabs.com</li>
@@ -206,7 +293,7 @@
             </section>
 
             <section>
-                <h2>14. Información Específica para Usuarios en la Unión Europea</h2>
+                <h2>15. Información Específica para Usuarios en la Unión Europea</h2>
                 <p>Si te encuentras en la Unión Europea, tienes derechos adicionales bajo el GDPR:</p>
                 <ul>
                     <li>Base legal para procesamiento: Consentimiento, ejecución de contrato, interés legítimo</li>
@@ -217,7 +304,7 @@
             </section>
 
             <section>
-                <h2>15. Información Específica para Usuarios en California</h2>
+                <h2>16. Información Específica para Usuarios en California</h2>
                 <p>Bajo la CCPA (California Consumer Privacy Act), los residentes de California tienen derechos adicionales:</p>
                 <ul>
                     <li>Derecho a saber qué información personal se recopila, usa, comparte o vende</li>
@@ -239,7 +326,7 @@
         <div class="container">
             <h1>Privacy Policy</h1>
             <p class="subtitle">RecipeTuner by WizeAI Labs</p>
-            <p class="last-updated"><strong>Last updated:</strong> October 14, 2025</p>
+            <p class="last-updated"><strong>Last updated:</strong> October 30, 2025</p>
 
             <section>
                 <h2>1. Introduction</h2>
@@ -262,7 +349,6 @@
                 <ul>
                     <li><strong>Usage data:</strong> Features you use, usage time, app interactions</li>
                     <li><strong>Device information:</strong> Model, operating system, app version, language</li>
-                    <li><strong>Biometric data:</strong> Face ID / Touch ID (processed locally on your device, never sent to our servers)</li>
                     <li><strong>Photos:</strong> Recipe images captured with camera or selected from your gallery (only with your permission)</li>
                 </ul>
 
@@ -275,8 +361,96 @@
                 </ul>
             </section>
 
+            <section id="biometric-data-en">
+                <h2>3. Biometric Data & Authentication</h2>
+
+                <h3>Face ID / Touch ID Usage</h3>
+                <p>RecipeTuner uses Face ID and Touch ID exclusively for local device authentication to provide secure and convenient access to your account.</p>
+
+                <h3>Important Clarifications</h3>
+                <p><strong>We DO NOT collect, process, or store any biometric data:</strong></p>
+
+                <ul>
+                    <li>✅ <strong>No Collection:</strong> We do not capture or collect facial recognition data, fingerprints, or any other biometric information</li>
+                    <li>✅ <strong>iOS Handles Everything:</strong> Face ID and Touch ID are handled entirely by iOS in your device's Secure Enclave (a dedicated security chip)</li>
+                    <li>✅ <strong>We Only Receive Success/Failure:</strong> Our app only receives a simple "authentication successful" or "authentication failed" response from iOS</li>
+                    <li>✅ <strong>Data Never Leaves Your Device:</strong> No biometric information ever leaves your device or is transmitted to our servers</li>
+                    <li>✅ <strong>Not Shared With Anyone:</strong> We do not share biometric data with third parties because we never have access to it</li>
+                </ul>
+
+                <h3>How It Works</h3>
+                <p>When you enable Face ID/Touch ID in RecipeTuner:</p>
+                <ol>
+                    <li>You tap "Unlock with Face ID"</li>
+                    <li>iOS prompts you to authenticate using your registered biometric data</li>
+                    <li>iOS processes the authentication entirely within the Secure Enclave</li>
+                    <li>iOS tells RecipeTuner only whether authentication succeeded or failed</li>
+                    <li>If successful, you gain access to the app</li>
+                </ol>
+                <p><strong>At no point does RecipeTuner access, see, or store your biometric data.</strong></p>
+
+                <h3>Data Storage Location</h3>
+                <p><strong>Biometric data storage:</strong> Your device's Secure Enclave (managed by Apple)</p>
+                <p><strong>RecipeTuner storage:</strong> None</p>
+
+                <p>All biometric data (facial recognition patterns, fingerprint templates) is stored exclusively in your device's Secure Enclave, which is:</p>
+                <ul>
+                    <li>Hardware-encrypted</li>
+                    <li>Isolated from the main processor</li>
+                    <li>Inaccessible to all applications (including RecipeTuner)</li>
+                    <li>Managed entirely by Apple's operating system</li>
+                </ul>
+
+                <h3>User Control</h3>
+                <p>You have complete control over biometric authentication:</p>
+
+                <p><strong>Enable/Disable:</strong> You can enable or disable Face ID/Touch ID for RecipeTuner at any time in:</p>
+                <ul>
+                    <li>iOS Settings → RecipeTuner → Face ID & Passcode, or</li>
+                    <li>RecipeTuner app Settings → Security</li>
+                </ul>
+
+                <p><strong>Alternative Authentication:</strong> You can always use your email/password to log in instead of biometric authentication</p>
+
+                <p><strong>Delete Biometric Data:</strong> To delete your biometric data, go to iOS Settings → Face ID & Passcode → Reset Face ID (managed by Apple, not RecipeTuner)</p>
+
+                <h3>Third-Party Access</h3>
+                <p><strong>None.</strong></p>
+                <p>Apple does not share biometric data with app developers or third parties. Your Face ID/Touch ID data is protected by Apple's security architecture and is never accessible to RecipeTuner or any other application.</p>
+
+                <h3>Data Retention</h3>
+                <p><strong>RecipeTuner retention:</strong> Not applicable - we do not collect biometric data</p>
+                <p><strong>Apple's retention:</strong> Apple manages all biometric data retention according to their privacy policies. When you delete Face ID from your device, Apple deletes the biometric templates.</p>
+
+                <h3>Technical Implementation</h3>
+                <p>RecipeTuner uses the Expo LocalAuthentication API, which is a secure wrapper around Apple's LocalAuthentication framework. This ensures:</p>
+                <ul>
+                    <li>Industry-standard security practices</li>
+                    <li>No direct access to biometric data</li>
+                    <li>Compliance with Apple's security guidelines</li>
+                    <li>Protection of your privacy</li>
+                </ul>
+
+                <h3>Compliance</h3>
+                <p>Our use of biometric authentication complies with:</p>
+                <ul>
+                    <li>Apple App Store Review Guidelines (Guideline 2.5.13)</li>
+                    <li>GDPR requirements (no biometric data processing)</li>
+                    <li>CCPA requirements (no biometric data collection)</li>
+                    <li>Apple Platform Security Guidelines</li>
+                </ul>
+
+                <h3>Questions About Biometric Data?</h3>
+                <p>If you have questions about how Apple handles Face ID/Touch ID, please refer to:</p>
+                <ul>
+                    <li><a href="https://support.apple.com/guide/security/face-id-and-touch-id-sec067eb8d70/web" target="_blank">Apple's Face ID Security Guide</a></li>
+                    <li><a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
+                </ul>
+                <p>For questions about RecipeTuner's security practices, contact us at: <a href="mailto:privacy@wizeailabs.com">privacy@wizeailabs.com</a></p>
+            </section>
+
             <section>
-                <h2>3. How We Use Your Information</h2>
+                <h2>4. How We Use Your Information</h2>
                 <p>We use the collected information to:</p>
                 <ul>
                     <li>Provide and improve RecipeTuner's functionality</li>
@@ -292,7 +466,7 @@
             </section>
 
             <section>
-                <h2>4. Sharing Information</h2>
+                <h2>5. Sharing Information</h2>
                 <p><strong>WE DO NOT sell or rent your personal information to third parties.</strong></p>
 
                 <h3>We share information only in the following cases:</h3>
@@ -305,7 +479,7 @@
             </section>
 
             <section>
-                <h2>5. Data Security</h2>
+                <h2>6. Data Security</h2>
                 <p>We implement technical and organizational security measures to protect your information:</p>
                 <ul>
                     <li>Data encryption in transit (HTTPS/TLS)</li>
@@ -319,7 +493,7 @@
             </section>
 
             <section>
-                <h2>6. Your Rights</h2>
+                <h2>7. Your Rights</h2>
                 <p>Depending on your geographic location, you may have the following rights:</p>
                 <ul>
                     <li><strong>Access:</strong> Request a copy of your personal data</li>
@@ -334,7 +508,7 @@
             </section>
 
             <section>
-                <h2>7. Data Retention</h2>
+                <h2>8. Data Retention</h2>
                 <p>We retain your personal information while:</p>
                 <ul>
                     <li>You maintain an active RecipeTuner account</li>
@@ -345,7 +519,7 @@
             </section>
 
             <section>
-                <h2>8. App Permissions</h2>
+                <h2>9. App Permissions</h2>
                 <p>RecipeTuner requests the following permissions on iOS:</p>
                 <ul>
                     <li><strong>Camera:</strong> To scan recipes from books, magazines, or screens</li>
@@ -357,7 +531,7 @@
             </section>
 
             <section>
-                <h2>9. Cookies and Similar Technologies</h2>
+                <h2>10. Cookies and Similar Technologies</h2>
                 <p>RecipeTuner uses local storage technologies to:</p>
                 <ul>
                     <li>Keep your session active</li>
@@ -368,19 +542,19 @@
             </section>
 
             <section>
-                <h2>10. International Data Transfers</h2>
+                <h2>11. International Data Transfers</h2>
                 <p>Your data may be transferred and processed in countries outside your country of residence, including the United States and the European Union, where our service providers are located (OpenAI, Supabase, Stripe).</p>
                 <p>We ensure that these transfers comply with applicable data protection laws, including GDPR (General Data Protection Regulation).</p>
             </section>
 
             <section>
-                <h2>11. Children's Privacy</h2>
+                <h2>12. Children's Privacy</h2>
                 <p>RecipeTuner is not directed to children under 13 years of age. We do not knowingly collect personal information from children under 13. If we discover that we have collected data from a child under 13, we will delete that information immediately.</p>
                 <p>If you are a parent or guardian and believe your child has provided us with personal information, contact us at: <strong>privacy@wizeailabs.com</strong></p>
             </section>
 
             <section>
-                <h2>12. Changes to this Policy</h2>
+                <h2>13. Changes to this Policy</h2>
                 <p>We may update this Privacy Policy periodically. We will notify you of significant changes through:</p>
                 <ul>
                     <li>In-app notification</li>
@@ -391,7 +565,7 @@
             </section>
 
             <section>
-                <h2>13. Contact Information</h2>
+                <h2>14. Contact Information</h2>
                 <p>If you have questions, concerns, or requests related to this Privacy Policy or your personal data, contact us:</p>
                 <ul>
                     <li><strong>Email:</strong> privacy@wizeailabs.com</li>
@@ -402,7 +576,7 @@
             </section>
 
             <section>
-                <h2>14. Specific Information for European Union Users</h2>
+                <h2>15. Specific Information for European Union Users</h2>
                 <p>If you are in the European Union, you have additional rights under GDPR:</p>
                 <ul>
                     <li>Legal basis for processing: Consent, contract execution, legitimate interest</li>
@@ -413,7 +587,7 @@
             </section>
 
             <section>
-                <h2>15. Specific Information for California Users</h2>
+                <h2>16. Specific Information for California Users</h2>
                 <p>Under the CCPA (California Consumer Privacy Act), California residents have additional rights:</p>
                 <ul>
                     <li>Right to know what personal information is collected, used, shared, or sold</li>
