@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Soporte | RecipeTuner</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <style>
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+        .lang-toggle:hover {
+            background: #0056b3;
+        }
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+        .contact-box {
+            background: #f8f9fa;
+            border-left: 4px solid #FF6B35;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .contact-email {
+            font-size: 1.2em;
+            color: #FF6B35;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <button class="lang-toggle" onclick="toggleLanguage()">
+        <span id="toggle-text">English</span>
+    </button>
+
+    <!-- ESPAÑOL -->
+    <div id="es-content" class="lang-content active">
+        <div class="container">
+            <h1>Soporte RecipeTuner</h1>
+            <p class="subtitle">RecipeTuner by WizeAI Labs</p>
+            <p class="last-updated"><strong>Última actualización:</strong> 24 de noviembre de 2025</p>
+
+            <section>
+                <h2>📧 Contáctanos</h2>
+                <div class="contact-box">
+                    <p><strong>¿Necesitas ayuda? Estamos aquí para ti!</strong></p>
+                    <p>Email: <a href="mailto:support@wiseailabs.com" class="contact-email">support@wiseailabs.com</a></p>
+                    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                        Normalmente respondemos en 24 horas durante días laborales.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>❓ Preguntas Frecuentes</h2>
+
+                <h3>¿Cómo restauro mi suscripción?</h3>
+                <p>Para restaurar tu suscripción:</p>
+                <ul>
+                    <li>Abre la app RecipeTuner</li>
+                    <li>Ve a Ajustes → Suscripción</li>
+                    <li>Toca "Restaurar Compras"</li>
+                    <li>Tu suscripción se sincronizará automáticamente</li>
+                </ul>
+
+                <h3>¿Cómo adapto recetas a mis necesidades dietéticas?</h3>
+                <p>RecipeTuner facilita la personalización de recetas:</p>
+                <ul>
+                    <li>Abre cualquier receta</li>
+                    <li>Toca "Adaptar Receta"</li>
+                    <li>Selecciona tus preferencias dietéticas (vegano, keto, sin gluten, etc.)</li>
+                    <li>Elige condiciones médicas (diabetes, hipertensión, etc.)</li>
+                    <li>Selecciona alérgenos a eliminar</li>
+                    <li>La IA genera la receta adaptada al instante</li>
+                </ul>
+
+                <h3>¿Cómo gestiono condiciones médicas?</h3>
+                <p>RecipeTuner te ayuda a crear comidas adecuadas para tu salud:</p>
+                <ul>
+                    <li>Ve a Ajustes → Condiciones Médicas</li>
+                    <li>Selecciona tus condiciones (diabetes, enfermedad cardíaca, colesterol, etc.)</li>
+                    <li>Todas las adaptaciones de recetas considerarán estas condiciones</li>
+                    <li>Obtén recomendaciones nutricionales basadas en tu salud</li>
+                </ul>
+
+                <h3>¿Cuántas recetas puedo crear gratis?</h3>
+                <p>Los usuarios gratuitos obtienen 5 adaptaciones de recetas. Los suscriptores Premium disfrutan de adaptaciones ilimitadas más funciones avanzadas.</p>
+
+                <h3>¿Cómo cancelo mi suscripción?</h3>
+                <p>Las suscripciones se gestionan a través de Apple:</p>
+                <ul>
+                    <li>Abre Ajustes de iOS</li>
+                    <li>Toca tu nombre en la parte superior</li>
+                    <li>Toca "Suscripciones"</li>
+                    <li>Selecciona RecipeTuner</li>
+                    <li>Toca "Cancelar Suscripción"</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>🎯 Sobre RecipeTuner</h2>
+                <p><strong>RecipeTuner es una aplicación de adaptación de recetas con IA que te ayuda a crear comidas personalizadas basadas en:</strong></p>
+                <ul>
+                    <li><strong>Preferencias Dietéticas:</strong> Vegano, vegetariano, keto, paleo, sin gluten, sin lácteos y más</li>
+                    <li><strong>Condiciones Médicas:</strong> Diabetes, hipertensión, colesterol alto, enfermedad cardíaca</li>
+                    <li><strong>Alergias:</strong> Elimina automáticamente alérgenos de las recetas</li>
+                    <li><strong>Objetivos Nutricionales:</strong> Personaliza calorías, macros y tamaños de porción</li>
+                    <li><strong>Preferencias de Cocina:</strong> Explora recetas de todo el mundo</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>💎 Planes de Suscripción</h2>
+                <p><strong>Plan Gratuito:</strong> 5 adaptaciones de recetas incluidas</p>
+                <p><strong>Premium Mensual:</strong> $119 MXN / $5.99 USD por mes</p>
+                <p><strong>Premium Anual:</strong> $899 MXN / $44.99 USD por año (ahorra 37%)</p>
+                <p style="margin-top: 15px;"><strong>Premium incluye:</strong></p>
+                <ul>
+                    <li>Recetas y adaptaciones ilimitadas generadas por IA</li>
+                    <li>Personalización dietética avanzada</li>
+                    <li>Soporte para condiciones médicas</li>
+                    <li>Planificación personalizada de comidas</li>
+                    <li>Soporte prioritario</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>🔒 Privacidad y Seguridad</h2>
+                <p>Tu privacidad es importante para nosotros. RecipeTuner:</p>
+                <ul>
+                    <li>No comparte tus datos personales con terceros</li>
+                    <li>Utiliza cifrado seguro para todos los datos</li>
+                    <li>No utiliza rastreo ni análisis de terceros</li>
+                    <li>Cumple con las directrices de privacidad de Apple</li>
+                </ul>
+                <p>Para más detalles, consulta nuestra <a href="https://legal.wiseailabs.com/recipetuner/privacy-policy" target="_blank">Política de Privacidad</a> y <a href="https://legal.wiseailabs.com/recipetuner/terms-of-service" target="_blank">Términos de Servicio</a>.</p>
+            </section>
+
+            <section>
+                <h2>📱 Soporte Técnico</h2>
+                <p>¿Experimentando problemas técnicos? Contáctanos en <a href="mailto:support@wiseailabs.com" class="contact-email">support@wiseailabs.com</a> con:</p>
+                <ul>
+                    <li>Descripción del problema</li>
+                    <li>Modelo de dispositivo y versión de iOS</li>
+                    <li>Capturas de pantalla (si aplica)</li>
+                    <li>Pasos para reproducir el problema</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>📞 Información de Contacto</h2>
+                <ul>
+                    <li><strong>Email de Soporte:</strong> <a href="mailto:support@wiseailabs.com">support@wiseailabs.com</a></li>
+                    <li><strong>Privacidad:</strong> <a href="mailto:privacy@wiseailabs.com">privacy@wiseailabs.com</a></li>
+                    <li><strong>Empresa:</strong> WiseAI Labs</li>
+                    <li><strong>Sitio Web:</strong> <a href="https://wizeailabs.com">https://wizeailabs.com</a></li>
+                </ul>
+            </section>
+
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #777; font-size: 0.9em;">
+                <p><strong>RecipeTuner</strong> by WiseAI Labs</p>
+                <p>© 2025 WiseAI Labs. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENGLISH -->
+    <div id="en-content" class="lang-content">
+        <div class="container">
+            <h1>RecipeTuner Support</h1>
+            <p class="subtitle">RecipeTuner by WizeAI Labs</p>
+            <p class="last-updated"><strong>Last updated:</strong> November 24, 2025</p>
+
+            <section>
+                <h2>📧 Contact Us</h2>
+                <div class="contact-box">
+                    <p><strong>Need help? We're here for you!</strong></p>
+                    <p>Email: <a href="mailto:support@wiseailabs.com" class="contact-email">support@wiseailabs.com</a></p>
+                    <p style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                        We typically respond within 24 hours on business days.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>❓ Frequently Asked Questions</h2>
+
+                <h3>How do I restore my subscription?</h3>
+                <p>To restore your subscription:</p>
+                <ul>
+                    <li>Open RecipeTuner app</li>
+                    <li>Go to Settings → Subscription</li>
+                    <li>Tap "Restore Purchases"</li>
+                    <li>Your subscription will sync automatically</li>
+                </ul>
+
+                <h3>How do I adapt recipes to my dietary needs?</h3>
+                <p>RecipeTuner makes it easy to personalize recipes:</p>
+                <ul>
+                    <li>Open any recipe</li>
+                    <li>Tap "Adapt Recipe"</li>
+                    <li>Select your dietary preferences (vegan, keto, gluten-free, etc.)</li>
+                    <li>Choose medical conditions (diabetes, hypertension, etc.)</li>
+                    <li>Select allergens to remove</li>
+                    <li>AI generates adapted recipe instantly</li>
+                </ul>
+
+                <h3>How do I manage medical conditions?</h3>
+                <p>RecipeTuner helps you create meals suitable for your health needs:</p>
+                <ul>
+                    <li>Go to Settings → Medical Conditions</li>
+                    <li>Select your conditions (diabetes, heart disease, cholesterol, etc.)</li>
+                    <li>All recipe adaptations will consider these conditions</li>
+                    <li>Get nutritional recommendations based on your health</li>
+                </ul>
+
+                <h3>How many recipes can I create for free?</h3>
+                <p>Free users get 5 recipe adaptations. Premium subscribers enjoy unlimited adaptations plus advanced features.</p>
+
+                <h3>How do I cancel my subscription?</h3>
+                <p>Subscriptions are managed through Apple:</p>
+                <ul>
+                    <li>Open iOS Settings</li>
+                    <li>Tap your name at the top</li>
+                    <li>Tap "Subscriptions"</li>
+                    <li>Select RecipeTuner</li>
+                    <li>Tap "Cancel Subscription"</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>🎯 About RecipeTuner</h2>
+                <p><strong>RecipeTuner is an AI-powered recipe adaptation app that helps you create personalized meals based on:</strong></p>
+                <ul>
+                    <li><strong>Dietary Preferences:</strong> Vegan, vegetarian, keto, paleo, gluten-free, dairy-free, and more</li>
+                    <li><strong>Medical Conditions:</strong> Diabetes, hypertension, high cholesterol, heart disease</li>
+                    <li><strong>Allergies:</strong> Automatically remove allergens from recipes</li>
+                    <li><strong>Nutritional Goals:</strong> Customize calories, macros, and serving sizes</li>
+                    <li><strong>Cuisine Preferences:</strong> Explore recipes from around the world</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>💎 Subscription Plans</h2>
+                <p><strong>Free Plan:</strong> 5 recipe adaptations included</p>
+                <p><strong>Premium Monthly:</strong> $119 MXN / $5.99 USD per month</p>
+                <p><strong>Premium Yearly:</strong> $899 MXN / $44.99 USD per year (save 37%)</p>
+                <p style="margin-top: 15px;"><strong>Premium includes:</strong></p>
+                <ul>
+                    <li>Unlimited AI-generated recipes and adaptations</li>
+                    <li>Advanced dietary customization</li>
+                    <li>Medical condition support</li>
+                    <li>Personalized meal planning</li>
+                    <li>Priority support</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>🔒 Privacy & Security</h2>
+                <p>Your privacy is important to us. RecipeTuner:</p>
+                <ul>
+                    <li>Does not share your personal data with third parties</li>
+                    <li>Uses secure encryption for all data</li>
+                    <li>Does not use tracking or third-party analytics</li>
+                    <li>Complies with Apple's privacy guidelines</li>
+                </ul>
+                <p>For full details, see our <a href="https://legal.wiseailabs.com/recipetuner/privacy-policy" target="_blank">Privacy Policy</a> and <a href="https://legal.wiseailabs.com/recipetuner/terms-of-service" target="_blank">Terms of Service</a>.</p>
+            </section>
+
+            <section>
+                <h2>📱 Technical Support</h2>
+                <p>Experiencing technical issues? Contact us at <a href="mailto:support@wiseailabs.com" class="contact-email">support@wiseailabs.com</a> with:</p>
+                <ul>
+                    <li>Description of the issue</li>
+                    <li>Device model and iOS version</li>
+                    <li>Screenshots (if applicable)</li>
+                    <li>Steps to reproduce the issue</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>📞 Contact Information</h2>
+                <ul>
+                    <li><strong>Support Email:</strong> <a href="mailto:support@wiseailabs.com">support@wiseailabs.com</a></li>
+                    <li><strong>Privacy:</strong> <a href="mailto:privacy@wiseailabs.com">privacy@wiseailabs.com</a></li>
+                    <li><strong>Company:</strong> WiseAI Labs</li>
+                    <li><strong>Website:</strong> <a href="https://wizeailabs.com">https://wizeailabs.com</a></li>
+                </ul>
+            </section>
+
+            <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #777; font-size: 0.9em;">
+                <p><strong>RecipeTuner</strong> by WiseAI Labs</p>
+                <p>© 2025 WiseAI Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            const esContent = document.getElementById('es-content');
+            const enContent = document.getElementById('en-content');
+            const toggleText = document.getElementById('toggle-text');
+
+            if (currentLang === 'es') {
+                esContent.classList.remove('active');
+                enContent.classList.add('active');
+                toggleText.textContent = 'Español';
+                currentLang = 'en';
+                document.documentElement.lang = 'en';
+            } else {
+                enContent.classList.remove('active');
+                esContent.classList.add('active');
+                toggleText.textContent = 'English';
+                currentLang = 'es';
+                document.documentElement.lang = 'es';
+            }
+        }
+
+        // Auto-detect language on load
+        window.addEventListener('DOMContentLoaded', function() {
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('en') && currentLang === 'es') {
+                toggleLanguage();
+            }
+        });
+    </script>
+</body>
+</html>
