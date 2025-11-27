@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmado - WiseAI Labs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            transition: background 0.3s ease;
+        }
+
+        body.calorisnap {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body.recipetuner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        body.labsnap {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: scaleIn 0.5s ease-out 0.2s both;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .success-icon svg {
+            width: 45px;
+            height: 45px;
+            stroke: white;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .app-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 16px 48px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #999;
+            line-height: 1.5;
+        }
+
+        .countdown {
+            font-weight: 600;
+            color: #4CAF50;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo" id="appLogo">📸</div>
+
+        <div class="success-icon">
+            <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+        </div>
+
+        <h1>¡Email Confirmado!</h1>
+
+        <div class="app-badge" id="appBadge">CaloriSnap</div>
+
+        <p>
+            Tu cuenta ha sido activada exitosamente.<br>
+            Redirigiendo a la app en <span class="countdown" id="countdown">3</span> segundos...
+        </p>
+
+        <a href="#" id="openAppBtn" class="btn">Abrir App Ahora</a>
+
+        <p class="footer-text">
+            Si el botón no funciona, abre la app<br>manualmente desde tu dispositivo.
+        </p>
+    </div>
+
+    <script>
+        // Obtener parámetros de URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const app = urlParams.get('app') || 'calorisnap';
+
+        // Configuración por app
+        const appConfig = {
+            calorisnap: {
+                name: 'CaloriSnap',
+                logo: '📸',
+                color: '#4CAF50',
+                deepLink: 'calorisnap://',
+                badgeColor: '#4CAF50'
+            },
+            recipetuner: {
+                name: 'RecipeTuner',
+                logo: '🍳',
+                color: '#f5576c',
+                deepLink: 'recipetuner://',
+                badgeColor: '#f5576c'
+            },
+            labsnap: {
+                name: 'LabSnap',
+                logo: '🧪',
+                color: '#00f2fe',
+                deepLink: 'labsnap://',
+                badgeColor: '#00f2fe'
+            }
+        };
+
+        const config = appConfig[app] || appConfig.calorisnap;
+
+        // Actualizar UI
+        document.body.classList.add(app);
+        document.getElementById('appLogo').textContent = config.logo;
+        document.getElementById('appBadge').textContent = config.name;
+        document.getElementById('appBadge').style.background = config.badgeColor;
+        document.querySelector('.btn').style.background = config.color;
+        document.querySelector('.btn').style.boxShadow = `0 4px 15px ${config.color}40`;
+        document.querySelector('.countdown').style.color = config.color;
+        document.querySelector('.success-icon').style.background = config.color;
+
+        // Configurar deep link
+        const deepLink = config.deepLink + (urlParams.toString() ? '?' + urlParams.toString() : '');
+        document.getElementById('openAppBtn').href = deepLink;
+
+        // Countdown y auto-redirect
+        let seconds = 3;
+        const countdownEl = document.getElementById('countdown');
+
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = seconds;
+
+            if (seconds === 0) {
+                clearInterval(countdownInterval);
+                window.location.href = deepLink;
+            }
+        }, 1000);
+
+        // Prevenir doble redirect si el usuario hace click
+        document.getElementById('openAppBtn').addEventListener('click', (e) => {
+            clearInterval(countdownInterval);
+        });
+    </script>
+</body>
+</html>
