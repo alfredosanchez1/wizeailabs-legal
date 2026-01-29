@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriSnap - Analiza tu comida con Inteligencia Artificial</title>
+    <meta name="description" content="CaloriSnap usa IA para analizar el contenido nutricional de tus comidas con solo una foto. Disponible en App Store.">
+    <meta property="og:title" content="CaloriSnap - Analiza tu comida con IA">
+    <meta property="og:description" content="Toma una foto de tu comida y obtiene al instante las calorias, macronutrientes y valor nutricional. Disponible en App Store.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://legal.wiseailabs.com/calorisnap/landing">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0f1323;
+            --bg-card: #1a1f35;
+            --accent-purple: #7c5cfc;
+            --accent-blue: #4a90d9;
+            --accent-gradient: linear-gradient(135deg, #7c5cfc, #4a90d9);
+            --text-white: #ffffff;
+            --text-gray: #a0a8c0;
+            --text-light: #c8cee0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(124, 92, 252, 0.15);
+            color: var(--accent-purple);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(124, 92, 252, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 550px;
+            margin: 0 auto 36px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(124, 92, 252, 0.4);
+        }
+
+        .btn-primary svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: var(--text-light);
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-purple);
+            color: white;
+        }
+
+        .android-note {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* Screenshots carousel */
+        .screenshots {
+            padding: 40px 20px 80px;
+            overflow: hidden;
+        }
+
+        .screenshots-track {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 20px 20px;
+            scrollbar-width: none;
+        }
+
+        .screenshots-track::-webkit-scrollbar { display: none; }
+
+        .screenshot-item {
+            flex: 0 0 auto;
+            width: 220px;
+            scroll-snap-align: center;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .features .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(124, 92, 252, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* How it works */
+        .how-it-works {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .step-number {
+            flex: 0 0 auto;
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Pilot CTA */
+        .pilot-cta {
+            padding: 80px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pilot-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(124, 92, 252, 0.3);
+            border-radius: 20px;
+            padding: 48px 36px;
+        }
+
+        .pilot-card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .pilot-card p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        .pilot-card .btn-primary {
+            margin-top: 24px;
+        }
+
+        /* Footer */
+        .landing-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .landing-footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        .landing-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 20px 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .features h2, .how-it-works h2, .pilot-card h2 { font-size: 1.7rem; }
+            .screenshot-item { width: 180px; }
+            .pilot-card { padding: 32px 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.8rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .screenshot-item { width: 160px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <span class="hero-badge">Disponible en App Store</span>
+        <h1>Analiza tu comida con Inteligencia Artificial</h1>
+        <p>Toma una foto de tu comida y obtiene al instante las calorias, macronutrientes y desglose nutricional completo.</p>
+        <div class="cta-buttons">
+            <a href="https://apps.apple.com/app/id6752263995" target="_blank" class="btn-primary">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Descargar en App Store
+            </a>
+            <a href="#funciones" class="btn-secondary">Conocer funciones</a>
+        </div>
+        <p class="android-note">Version para Android disponible proximamente</p>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="screenshots">
+        <div class="screenshots-track">
+            <div class="screenshot-item"><img src="images/inicio.png" alt="Pantalla de inicio de CaloriSnap" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/dashboard.png" alt="Dashboard con resumen diario" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/graficas.png" alt="Graficas de calorias y distribucion" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/estadisticas.png" alt="Estadisticas nutricionales detalladas" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/notificaciones.png" alt="Recordatorios personalizados" loading="lazy"></div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="funciones">
+        <h2>Todo lo que necesitas para cuidar tu alimentacion</h2>
+        <p class="section-subtitle">CaloriSnap combina inteligencia artificial con un registro nutricional completo para darte el control de tu salud.</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>Analisis con IA</h3>
+                <p>Toma una foto de tu comida y la inteligencia artificial identifica el platillo, calorias, proteinas, carbohidratos, grasas, azucares y fibra.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Dashboard inteligente</h3>
+                <p>Visualiza tu consumo diario, balance calorico e integracion con Apple Health para ver pasos y calorias quemadas en un solo lugar.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Graficas y tendencias</h3>
+                <p>Consulta tus calorias por dia, distribucion de comidas y tendencias nutricionales en periodos de 7, 15 o 30 dias.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🥗</div>
+                <h3>Desglose nutricional</h3>
+                <p>Conoce en detalle tus proteinas, carbohidratos, grasas, azucares y fibra totales y promedio por comida.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>Historial completo</h3>
+                <p>Accede al registro de todas tus comidas organizadas por fecha, con detalle nutricional de cada una.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Recordatorios</h3>
+                <p>Configura recordatorios para desayuno, comida, cena y snacks a la hora que prefieras para no olvidar registrar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+        <h2>Como funciona</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Toma una foto</h3>
+                    <p>Usa la camara de tu iPhone o selecciona una imagen de tu galeria.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>La IA analiza tu comida</h3>
+                    <p>En segundos, la inteligencia artificial identifica el platillo y calcula su informacion nutricional completa.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Consulta tu progreso</h3>
+                    <p>Revisa tu dashboard, graficas y estadisticas para tomar mejores decisiones sobre tu alimentacion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilot CTA -->
+    <section class="pilot-cta">
+        <div class="pilot-card">
+            <h2>Programa piloto para profesionales de la nutricion</h2>
+            <p>Si eres nutriologo y quieres probar CaloriSnap con tus pacientes de forma gratuita, nos encantaria contar con tu retroalimentacion.</p>
+            <p>Ofrecemos acceso completo sin costo tanto para ti como para tus pacientes durante el periodo de prueba.</p>
+            <a href="mailto:support@wiseailabs.com?subject=Programa%20Piloto%20CaloriSnap%20-%20Nutriologo&body=Hola%2C%20me%20interesa%20participar%20en%20el%20programa%20piloto%20de%20CaloriSnap.%0A%0ANombre%3A%0AConsultorio%2FClinica%3A%0ACiudad%3A%0ANumero%20de%20pacientes%20interesados%3A" class="btn-primary">Solicitar acceso gratuito</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <p>&copy; 2025 WiseAI Labs. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="/calorisnap/privacy-policy">Politica de Privacidad</a>
+            <a href="/calorisnap/terms-of-service">Terminos de Servicio</a>
+            <a href="mailto:support@wiseailabs.com">Contacto</a>
+        </div>
+    </footer>
+
+</body>
+</html>
