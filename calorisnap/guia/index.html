@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriSnap - Guia Rapida de Inicio</title>
+    <meta name="description" content="Guia rapida para comenzar a usar CaloriSnap. Aprende a analizar tus comidas con inteligencia artificial.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0f1323;
+            --bg-card: #1a1f35;
+            --bg-card-alt: #1e2440;
+            --accent-purple: #7c5cfc;
+            --accent-blue: #4a90d9;
+            --accent-gradient: linear-gradient(135deg, #7c5cfc, #4a90d9);
+            --accent-green: #34d399;
+            --accent-yellow: #fbbf24;
+            --text-white: #ffffff;
+            --text-gray: #a0a8c0;
+            --text-light: #c8cee0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .guide-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guide-badge {
+            display: inline-block;
+            background: rgba(52, 211, 153, 0.15);
+            color: var(--accent-green);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .guide-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* Content container */
+        .guide-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        /* Step sections */
+        .guide-step {
+            margin-bottom: 48px;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            flex: 0 0 auto;
+            width: 44px;
+            height: 44px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .step-body {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .step-body p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .step-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-body ol, .step-body ul {
+            margin: 12px 0 16px 24px;
+            color: var(--text-light);
+        }
+
+        .step-body li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .step-body li strong {
+            color: var(--text-white);
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            background: rgba(124, 92, 252, 0.1);
+            border: 1px solid rgba(124, 92, 252, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--accent-purple);
+        }
+
+        /* Tip box */
+        .tip-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .tip-box p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .tip-box strong {
+            color: var(--accent-green);
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .warning-box p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .warning-box strong {
+            color: var(--accent-yellow);
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 48px 0;
+        }
+
+        /* Summary section */
+        .summary-section {
+            margin-bottom: 48px;
+        }
+
+        .summary-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .summary-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .summary-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .summary-card p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* CTA section */
+        .guide-cta {
+            text-align: center;
+            padding: 48px 28px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid rgba(124, 92, 252, 0.3);
+            margin-bottom: 48px;
+        }
+
+        .guide-cta h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .guide-cta p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(124, 92, 252, 0.4);
+        }
+
+        .btn-primary svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 16px;
+            transition: color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Footer */
+        .guide-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .guide-footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        .guide-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .guide-header { padding: 40px 20px 30px; }
+            .guide-header h1 { font-size: 2rem; }
+            .step-header h2 { font-size: 1.2rem; }
+            .step-body { padding: 22px; }
+            .summary-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .guide-header h1 { font-size: 1.7rem; }
+            .step-body { padding: 18px; }
+        }
+
+        /* Print */
+        @media print {
+            body { background: white; color: #212529; }
+            .guide-header h1 { background: none; -webkit-text-fill-color: #212529; }
+            .step-number { background: #333; color: white; -webkit-print-color-adjust: exact; }
+            .step-body, .summary-card, .guide-cta { border: 1px solid #ddd; background: #f9f9f9; }
+            .step-body p, .step-body li, .summary-card p, .guide-cta p { color: #444; }
+            .highlight-box, .tip-box, .warning-box { border: 1px solid #ccc; background: #f5f5f5; }
+            .highlight-box p, .tip-box p, .warning-box p { color: #444; }
+            .highlight-box strong { color: #5a3fd6; }
+            .tip-box strong { color: #059669; }
+            .warning-box strong { color: #d97706; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="guide-header">
+        <span class="guide-badge">Programa Piloto</span>
+        <h1>Guia Rapida de Inicio</h1>
+        <p>Comienza a usar CaloriSnap en minutos. Esta guia te lleva paso a paso desde la descarga hasta tu primer analisis nutricional.</p>
+    </header>
+
+    <div class="guide-content">
+
+        <!-- Step 1: Download -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>Descarga la app</h2>
+            </div>
+            <div class="step-body">
+                <ol>
+                    <li>Abre el <strong>App Store</strong> en tu iPhone.</li>
+                    <li>Busca <strong>"CaloriSnap"</strong> o accede directamente desde este enlace: <a href="https://apps.apple.com/app/id6752263995" target="_blank" style="color: var(--accent-purple);">Descargar CaloriSnap</a></li>
+                    <li>Toca <strong>"Obtener"</strong> para instalar la app.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Requisitos:</strong> iPhone con iOS 16 o posterior. La app es gratuita durante el programa piloto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Create account -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>Crea tu cuenta</h2>
+            </div>
+            <div class="step-body">
+                <ol>
+                    <li>Abre CaloriSnap y selecciona <strong>"Crear cuenta"</strong>.</li>
+                    <li>Ingresa tu <strong>correo electronico</strong> y crea una <strong>contrasena</strong>.</li>
+                    <li>Revisa tu bandeja de entrada y <strong>confirma tu correo</strong> tocando el enlace que recibiras.</li>
+                    <li>Inicia sesion con tus credenciales.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Seguridad:</strong> Puedes activar Face ID o Touch ID desde la configuracion de la app para proteger tus datos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: First analysis -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2>Analiza tu primera comida</h2>
+            </div>
+            <div class="step-body">
+                <ol>
+                    <li>En la pantalla principal, toca <strong>"Tomar Foto"</strong>.</li>
+                    <li>Permite el acceso a la camara si es la primera vez.</li>
+                    <li>Toma una <strong>foto clara</strong> de tu comida. Asegurate de que el platillo se vea completo y bien iluminado.</li>
+                    <li>La inteligencia artificial analizara la imagen y en segundos mostrara:
+                        <ul>
+                            <li><strong>Nombre del platillo</strong> identificado</li>
+                            <li><strong>Calorias</strong> totales estimadas</li>
+                            <li><strong>Macronutrientes:</strong> proteinas, carbohidratos, grasas</li>
+                            <li><strong>Detalle adicional:</strong> azucares y fibra</li>
+                        </ul>
+                    </li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Consejo:</strong> Tambien puedes seleccionar una foto existente de tu galeria tocando "Fotos Almacenadas".</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Dashboard -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <h2>Consulta tu dashboard</h2>
+            </div>
+            <div class="step-body">
+                <p>Desde la pantalla principal, toca <strong>"Dashboard"</strong> para ver tu resumen diario:</p>
+                <ul>
+                    <li><strong>Calorias consumidas</strong> en el dia</li>
+                    <li><strong>Calorias quemadas</strong> (si conectas Apple Health)</li>
+                    <li><strong>Balance calorico</strong> del dia</li>
+                    <li><strong>Resumen general:</strong> total de comidas, calorias acumuladas y promedio por comida</li>
+                </ul>
+                <p>Puedes cambiar el periodo de consulta entre <strong>7, 15 o 30 dias</strong> para ver tus tendencias.</p>
+            </div>
+        </div>
+
+        <!-- Step 5: Stats and charts -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2>Revisa graficas y estadisticas</h2>
+            </div>
+            <div class="step-body">
+                <p>CaloriSnap genera automaticamente graficas con tu informacion:</p>
+                <ul>
+                    <li><strong>Calorias por dia:</strong> grafica de linea con tu consumo diario</li>
+                    <li><strong>Distribucion de comidas:</strong> grafica circular mostrando el porcentaje de cada tipo de comida</li>
+                    <li><strong>Estadisticas nutricionales:</strong> desglose completo de proteinas, carbohidratos, grasas, azucares y fibra con totales y promedios</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 6: Export -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2>Exporta tus datos</h2>
+            </div>
+            <div class="step-body">
+                <p>Comparte tu registro nutricional con tu nutriologo o guardalo para tus registros:</p>
+                <ul>
+                    <li><strong>CSV:</strong> ideal para abrir en Excel o Google Sheets</li>
+                    <li><strong>Texto:</strong> formato legible para enviar por correo o mensajeria</li>
+                    <li><strong>JSON:</strong> formato estructurado para integraciones</li>
+                </ul>
+                <p>Accede a esta funcion desde la seccion de <strong>"Exportar"</strong> en la app.</p>
+                <div class="highlight-box">
+                    <p><strong>Para nutriologos:</strong> El formato CSV es el mas practico para revisar el registro de tus pacientes en una hoja de calculo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: Notifications -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <h2>Configura tus recordatorios</h2>
+            </div>
+            <div class="step-body">
+                <p>Para no olvidar registrar tus comidas, activa los recordatorios:</p>
+                <ol>
+                    <li>Ve a la seccion de <strong>Notificaciones</strong> desde la pantalla principal.</li>
+                    <li>Activa <strong>"Habilitar Notificaciones"</strong>.</li>
+                    <li>Activa <strong>"Recordatorios de Comidas"</strong> y ajusta las horas para:
+                        <ul>
+                            <li>Desayuno (default: 08:00)</li>
+                            <li>Comida (default: 13:00)</li>
+                            <li>Cena (default: 19:00)</li>
+                            <li>Snack (default: 16:00)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Quick summary -->
+        <div class="summary-section">
+            <h2>Resumen rapido</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-icon">📸</div>
+                    <h3>Foto</h3>
+                    <p>Toma una foto de tu comida</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🤖</div>
+                    <h3>Analisis</h3>
+                    <p>La IA calcula calorias y macros</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📊</div>
+                    <h3>Revisa</h3>
+                    <p>Consulta tu dashboard y graficas</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📤</div>
+                    <h3>Comparte</h3>
+                    <p>Exporta datos a tu nutriologo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support CTA -->
+        <div class="guide-cta">
+            <h2>¿Necesitas ayuda?</h2>
+            <p>Si tienes dudas o problemas tecnicos durante el programa piloto, contactanos directamente.</p>
+            <a href="mailto:support@wiseailabs.com?subject=Soporte%20Piloto%20CaloriSnap" class="btn-primary">
+                Contactar soporte
+            </a>
+            <br>
+            <a href="/calorisnap/landing" class="btn-secondary">
+                ← Volver al landing page
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="guide-footer">
+        <p>&copy; 2025 WiseAI Labs. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="/calorisnap/privacy-policy">Politica de Privacidad</a>
+            <a href="/calorisnap/terms-of-service">Terminos de Servicio</a>
+            <a href="mailto:support@wiseailabs.com">Contacto</a>
+        </div>
+    </footer>
+
+</body>
+</html>
