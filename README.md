@@ -184,7 +184,7 @@ Los archivos incluyen headers de seguridad configurados en `vercel.json`:
 
 ## 📄 Licencia
 
-© 2025 WizeAI Labs. Todos los derechos reservados.
+© 2026 WizeAI Labs. Todos los derechos reservados.
 
 Este repositorio contiene documentos legales propietarios de WizeAI Labs. El contenido no puede ser copiado, modificado o redistribuido sin autorización expresa.
 

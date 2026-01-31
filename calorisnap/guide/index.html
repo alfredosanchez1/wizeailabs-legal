@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CaloriSnap - Guia Rapida de Inicio</title>
-    <meta name="description" content="Guia rapida para comenzar a usar CaloriSnap. Aprende a analizar tus comidas con inteligencia artificial.">
+    <title>CaloriSnap - Quick Start Guide</title>
+    <meta name="description" content="Quick start guide for CaloriSnap. Learn how to analyze your meals with artificial intelligence.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -67,6 +67,22 @@
             color: var(--text-gray);
             max-width: 520px;
             margin: 0 auto;
+        }
+
+        .lang-switch {
+            display: inline-block;
+            margin-top: 16px;
+        }
+
+        .lang-switch a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .lang-switch a:hover {
+            text-decoration: underline;
         }
 
         /* Content container */
@@ -284,11 +300,6 @@
             box-shadow: 0 8px 25px rgba(124, 92, 252, 0.4);
         }
 
-        .btn-primary svg {
-            width: 22px;
-            height: 22px;
-        }
-
         .btn-secondary {
             display: inline-flex;
             align-items: center;
@@ -364,11 +375,11 @@
 
     <!-- Header -->
     <header class="guide-header">
-        <span class="guide-badge">Programa Piloto</span>
-        <h1>Guia Rapida de Inicio</h1>
-        <p>Comienza a usar CaloriSnap en minutos. Esta guia te lleva paso a paso desde la descarga hasta tu primer analisis nutricional.</p>
-        <div style="margin-top: 16px;">
-            <a href="/calorisnap/guide" style="color: #7c5cfc; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Read in English</a>
+        <span class="guide-badge">User Guide</span>
+        <h1>Quick Start Guide</h1>
+        <p>Start using CaloriSnap in minutes. This guide walks you through every step from downloading the app to your first nutritional analysis.</p>
+        <div class="lang-switch">
+            <a href="/calorisnap/guia">Leer en Espa&ntilde;ol</a>
         </div>
     </header>
 
@@ -378,16 +389,16 @@
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">1</div>
-                <h2>Descarga la app</h2>
+                <h2>Download the app</h2>
             </div>
             <div class="step-body">
                 <ol>
-                    <li>Abre el <strong>App Store</strong> en tu iPhone.</li>
-                    <li>Busca <strong>"CaloriSnap"</strong> o accede directamente desde este enlace: <a href="https://apps.apple.com/app/id6752263995" target="_blank" style="color: var(--accent-purple);">Descargar CaloriSnap</a></li>
-                    <li>Toca <strong>"Obtener"</strong> para instalar la app.</li>
+                    <li>Open the <strong>App Store</strong> on your iPhone.</li>
+                    <li>Search for <strong>"CaloriSnap"</strong> or go directly to: <a href="https://apps.apple.com/app/id6752263995" target="_blank" style="color: var(--accent-purple);">Download CaloriSnap</a></li>
+                    <li>Tap <strong>"Get"</strong> to install the app.</li>
                 </ol>
                 <div class="tip-box">
-                    <p><strong>Requisitos:</strong> iPhone con iOS 16 o posterior.</p>
+                    <p><strong>Requirements:</strong> iPhone running iOS 16 or later.</p>
                 </div>
             </div>
         </div>
@@ -396,17 +407,17 @@
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">2</div>
-                <h2>Crea tu cuenta</h2>
+                <h2>Create your account</h2>
             </div>
             <div class="step-body">
                 <ol>
-                    <li>Abre CaloriSnap y selecciona <strong>"Crear cuenta"</strong>.</li>
-                    <li>Ingresa tu <strong>correo electronico</strong> y crea una <strong>contrasena</strong>.</li>
-                    <li>Revisa tu bandeja de entrada y <strong>confirma tu correo</strong> tocando el enlace que recibiras.</li>
-                    <li>Inicia sesion con tus credenciales.</li>
+                    <li>Open CaloriSnap and tap <strong>"Create Account"</strong>.</li>
+                    <li>Enter your <strong>email address</strong> and create a <strong>password</strong>.</li>
+                    <li>Check your inbox and <strong>confirm your email</strong> by tapping the link you receive.</li>
+                    <li>Sign in with your credentials.</li>
                 </ol>
                 <div class="highlight-box">
-                    <p><strong>Seguridad:</strong> Puedes activar Face ID o Touch ID desde la configuracion de la app para proteger tus datos.</p>
+                    <p><strong>Security:</strong> You can enable Face ID or Touch ID from the app settings to protect your data.</p>
                 </div>
             </div>
         </div>
@@ -415,25 +426,25 @@
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">3</div>
-                <h2>Analiza tu primera comida</h2>
+                <h2>Analyze your first meal</h2>
             </div>
             <div class="step-body">
                 <ol>
-                    <li>En la pantalla principal, toca <strong>"Tomar Foto"</strong>.</li>
-                    <li>Permite el acceso a la camara si es la primera vez.</li>
-                    <li>Toma una <strong>foto clara</strong> de tu comida. Asegurate de que el platillo se vea completo y bien iluminado.</li>
-                    <li>Si lo deseas, toca <strong>"Agregar nota de voz"</strong> para dar mas contexto sobre tu comida. Esto es util cuando es dificil determinar el tipo de alimento solo por la imagen, o si quieres ser mas especifico con las cantidades o tipo de ingredientes.</li>
-                    <li>La inteligencia artificial analizara la imagen y en segundos mostrara:
+                    <li>On the main screen, tap <strong>"Take Photo"</strong>.</li>
+                    <li>Allow camera access if this is your first time.</li>
+                    <li>Take a <strong>clear photo</strong> of your food. Make sure the dish is fully visible and well lit.</li>
+                    <li>Optionally, tap <strong>"Add voice note"</strong> to give more context about your meal. This is useful when the food type is hard to identify from the image alone, or if you want to be more specific about quantities or ingredients.</li>
+                    <li>The AI will analyze the image and within seconds display:
                         <ul>
-                            <li><strong>Nombre del platillo</strong> identificado</li>
-                            <li><strong>Calorias</strong> totales estimadas</li>
-                            <li><strong>Macronutrientes:</strong> proteinas, carbohidratos, grasas</li>
-                            <li><strong>Detalle adicional:</strong> azucares y fibra</li>
+                            <li><strong>Dish name</strong> identified</li>
+                            <li>Estimated total <strong>calories</strong></li>
+                            <li><strong>Macronutrients:</strong> protein, carbs, fat</li>
+                            <li><strong>Additional detail:</strong> sugar and fiber</li>
                         </ul>
                     </li>
                 </ol>
                 <div class="tip-box">
-                    <p><strong>Consejo:</strong> Tambien puedes seleccionar una foto existente de tu galeria tocando "Fotos Almacenadas".</p>
+                    <p><strong>Tip:</strong> You can also select an existing photo from your gallery by tapping "Stored Photos".</p>
                 </div>
             </div>
         </div>
@@ -442,17 +453,17 @@
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">4</div>
-                <h2>Consulta tu dashboard</h2>
+                <h2>Check your dashboard</h2>
             </div>
             <div class="step-body">
-                <p>Desde la pantalla principal, toca <strong>"Dashboard"</strong> para ver tu resumen diario:</p>
+                <p>From the main screen, tap <strong>"Dashboard"</strong> to see your daily summary:</p>
                 <ul>
-                    <li><strong>Calorias consumidas</strong> en el dia</li>
-                    <li><strong>Calorias quemadas</strong> (si conectas Apple Health)</li>
-                    <li><strong>Balance calorico</strong> del dia</li>
-                    <li><strong>Resumen general:</strong> total de comidas, calorias acumuladas y promedio por comida</li>
+                    <li><strong>Calories consumed</strong> today</li>
+                    <li><strong>Calories burned</strong> (if you connect Apple Health)</li>
+                    <li><strong>Caloric balance</strong> for the day</li>
+                    <li><strong>General summary:</strong> total meals, accumulated calories, and average per meal</li>
                 </ul>
-                <p>Puedes cambiar el periodo de consulta entre <strong>7, 15 o 30 dias</strong> para ver tus tendencias.</p>
+                <p>You can switch the time period between <strong>7, 15, or 30 days</strong> to see your trends.</p>
             </div>
         </div>
 
@@ -460,14 +471,14 @@
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">5</div>
-                <h2>Revisa graficas y estadisticas</h2>
+                <h2>Review charts and statistics</h2>
             </div>
             <div class="step-body">
-                <p>CaloriSnap genera automaticamente graficas con tu informacion:</p>
+                <p>CaloriSnap automatically generates charts with your data:</p>
                 <ul>
-                    <li><strong>Calorias por dia:</strong> grafica de linea con tu consumo diario</li>
-                    <li><strong>Distribucion de comidas:</strong> grafica circular mostrando el porcentaje de cada tipo de comida</li>
-                    <li><strong>Estadisticas nutricionales:</strong> desglose completo de proteinas, carbohidratos, grasas, azucares y fibra con totales y promedios</li>
+                    <li><strong>Calories per day:</strong> line chart showing your daily intake</li>
+                    <li><strong>Meal distribution:</strong> pie chart showing the percentage of each meal type</li>
+                    <li><strong>Nutritional statistics:</strong> full breakdown of protein, carbs, fat, sugar, and fiber with totals and averages</li>
                 </ul>
             </div>
         </div>
@@ -476,18 +487,18 @@
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">6</div>
-                <h2>Exporta tus datos</h2>
+                <h2>Export your data</h2>
             </div>
             <div class="step-body">
-                <p>Comparte tu registro nutricional con tu nutriologo o guardalo para tus registros:</p>
+                <p>Share your nutritional log with your nutritionist or save it for your records:</p>
                 <ul>
-                    <li><strong>CSV:</strong> ideal para abrir en Excel o Google Sheets</li>
-                    <li><strong>Texto:</strong> formato legible para enviar por correo o mensajeria</li>
-                    <li><strong>JSON:</strong> formato estructurado para integraciones</li>
+                    <li><strong>CSV:</strong> ideal for opening in Excel or Google Sheets</li>
+                    <li><strong>Text:</strong> readable format for sending via email or messaging</li>
+                    <li><strong>JSON:</strong> structured format for integrations</li>
                 </ul>
-                <p>Accede a esta funcion desde la seccion de <strong>"Exportar"</strong> en la app.</p>
+                <p>Access this feature from the <strong>"Export"</strong> section in the app.</p>
                 <div class="highlight-box">
-                    <p><strong>Para nutriologos:</strong> El formato CSV es el mas practico para revisar el registro de tus pacientes en una hoja de calculo.</p>
+                    <p><strong>For nutritionists:</strong> The CSV format is the most practical way to review your patients' food logs in a spreadsheet.</p>
                 </div>
             </div>
         </div>
@@ -496,18 +507,18 @@
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">7</div>
-                <h2>Configura tus recordatorios</h2>
+                <h2>Set up your reminders</h2>
             </div>
             <div class="step-body">
-                <p>Para no olvidar registrar tus comidas, activa los recordatorios:</p>
+                <p>To make sure you never forget to log your meals, enable reminders:</p>
                 <ol>
-                    <li>Ve a la seccion de <strong>Notificaciones</strong> desde la pantalla principal.</li>
-                    <li>Activa <strong>"Habilitar Notificaciones"</strong>.</li>
-                    <li>Activa <strong>"Recordatorios de Comidas"</strong> y ajusta las horas para:
+                    <li>Go to the <strong>Notifications</strong> section from the main screen.</li>
+                    <li>Turn on <strong>"Enable Notifications"</strong>.</li>
+                    <li>Enable <strong>"Meal Reminders"</strong> and adjust the times for:
                         <ul>
-                            <li>Desayuno (default: 08:00)</li>
-                            <li>Comida (default: 13:00)</li>
-                            <li>Cena (default: 19:00)</li>
+                            <li>Breakfast (default: 08:00)</li>
+                            <li>Lunch (default: 13:00)</li>
+                            <li>Dinner (default: 19:00)</li>
                             <li>Snack (default: 16:00)</li>
                         </ul>
                     </li>
@@ -519,41 +530,41 @@
 
         <!-- Quick summary -->
         <div class="summary-section">
-            <h2>Resumen rapido</h2>
+            <h2>Quick summary</h2>
             <div class="summary-grid">
                 <div class="summary-card">
                     <div class="summary-icon">📸</div>
-                    <h3>Foto</h3>
-                    <p>Toma una foto de tu comida</p>
+                    <h3>Photo</h3>
+                    <p>Take a photo of your meal</p>
                 </div>
                 <div class="summary-card">
                     <div class="summary-icon">🤖</div>
-                    <h3>Analisis</h3>
-                    <p>La IA calcula calorias y macros</p>
+                    <h3>Analysis</h3>
+                    <p>AI calculates calories and macros</p>
                 </div>
                 <div class="summary-card">
                     <div class="summary-icon">📊</div>
-                    <h3>Revisa</h3>
-                    <p>Consulta tu dashboard y graficas</p>
+                    <h3>Review</h3>
+                    <p>Check your dashboard and charts</p>
                 </div>
                 <div class="summary-card">
                     <div class="summary-icon">📤</div>
-                    <h3>Comparte</h3>
-                    <p>Exporta datos a tu nutriologo</p>
+                    <h3>Share</h3>
+                    <p>Export data to your nutritionist</p>
                 </div>
             </div>
         </div>
 
         <!-- Support CTA -->
         <div class="guide-cta">
-            <h2>¿Necesitas ayuda?</h2>
-            <p>Si tienes dudas o problemas tecnicos durante el programa piloto, contactanos directamente.</p>
-            <a href="mailto:support@wiseailabs.com?subject=Soporte%20Piloto%20CaloriSnap" class="btn-primary">
-                Contactar soporte
+            <h2>Need help?</h2>
+            <p>If you have questions or technical issues, feel free to contact us directly.</p>
+            <a href="mailto:support@wiseailabs.com?subject=CaloriSnap%20Support" class="btn-primary">
+                Contact support
             </a>
             <br>
             <a href="/calorisnap/landing" class="btn-secondary">
-                ← Volver al landing page
+                &larr; Back to landing page
             </a>
         </div>
 
@@ -561,11 +572,11 @@
 
     <!-- Footer -->
     <footer class="guide-footer">
-        <p>&copy; 2026 WiseAI Labs. Todos los derechos reservados.</p>
+        <p>&copy; 2026 WiseAI Labs. All rights reserved.</p>
         <div class="footer-links">
-            <a href="/calorisnap/privacy-policy">Politica de Privacidad</a>
-            <a href="/calorisnap/terms-of-service">Terminos de Servicio</a>
-            <a href="mailto:support@wiseailabs.com">Contacto</a>
+            <a href="/calorisnap/privacy-policy">Privacy Policy</a>
+            <a href="/calorisnap/terms-of-service">Terms of Service</a>
+            <a href="mailto:support@wiseailabs.com">Contact</a>
         </div>
     </footer>
 
