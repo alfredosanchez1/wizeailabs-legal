@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaloriSnap - Guia Rapida de Inicio</title>
-    <meta name="description" content="Guia rapida para comenzar a usar CaloriSnap. Aprende a analizar tus comidas con inteligencia artificial.">
+    <meta name="description" content="Guia rapida para comenzar a usar CaloriSnap. Aprende a analizar tus comidas con inteligencia artificial, escanear recetas, registrar agua y mas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -67,6 +67,22 @@
             color: var(--text-gray);
             max-width: 520px;
             margin: 0 auto;
+        }
+
+        .lang-switch {
+            display: inline-block;
+            margin-top: 16px;
+        }
+
+        .lang-switch a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .lang-switch a:hover {
+            text-decoration: underline;
         }
 
         /* Content container */
@@ -214,7 +230,7 @@
 
         .summary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 16px;
         }
 
@@ -337,12 +353,13 @@
             .guide-header h1 { font-size: 2rem; }
             .step-header h2 { font-size: 1.2rem; }
             .step-body { padding: 22px; }
-            .summary-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 480px) {
             .guide-header h1 { font-size: 1.7rem; }
             .step-body { padding: 18px; }
+            .summary-grid { grid-template-columns: 1fr; }
         }
 
         /* Print */
@@ -364,11 +381,11 @@
 
     <!-- Header -->
     <header class="guide-header">
-        <span class="guide-badge">Programa Piloto</span>
+        <span class="guide-badge">Guia de Usuario &mdash; v1.5.2</span>
         <h1>Guia Rapida de Inicio</h1>
-        <p>Comienza a usar CaloriSnap en minutos. Esta guia te lleva paso a paso desde la descarga hasta tu primer analisis nutricional.</p>
-        <div style="margin-top: 16px;">
-            <a href="/calorisnap/guide" style="color: #7c5cfc; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Read in English</a>
+        <p>Comienza a usar CaloriSnap en minutos. Esta guia te lleva paso a paso por todas las funciones: analisis por foto, escaneo de recetas, seguimiento de agua y tu nutriologo personal de IA.</p>
+        <div class="lang-switch">
+            <a href="/calorisnap/guide">Read in English</a>
         </div>
     </header>
 
@@ -387,7 +404,7 @@
                     <li>Toca <strong>"Obtener"</strong> para instalar la app.</li>
                 </ol>
                 <div class="tip-box">
-                    <p><strong>Requisitos:</strong> iPhone con iOS 16 o posterior.</p>
+                    <p><strong>Requisitos:</strong> iPhone con iOS 16 o posterior. Disponible en espanol, ingles, portugues y frances.</p>
                 </div>
             </div>
         </div>
@@ -438,10 +455,95 @@
             </div>
         </div>
 
-        <!-- Step 4: Dashboard -->
+        <!-- Step 4: Recipe Scanner (NEW) -->
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">4</div>
+                <h2>Escanea una receta</h2>
+            </div>
+            <div class="step-body">
+                <p>¿Tienes una receta escrita o impresa? CaloriSnap puede analizarla y calcular la nutricion por porcion:</p>
+                <ol>
+                    <li>En la pantalla principal, desplazate hasta <strong>"Otros Metodos de Entrada"</strong> y toca <strong>"Escanear Receta"</strong>.</li>
+                    <li>Toma una foto de la receta con tu camara o selecciona una de tu galeria.</li>
+                    <li>Si la receta tiene varias paginas, toca <strong>"Agregar otra pagina"</strong> para capturar cada una.</li>
+                    <li>Indica cuantas <strong>porciones rinde la receta</strong> y cuantas <strong>porciones vas a comer</strong>.</li>
+                    <li>Toca <strong>"Analizar Receta"</strong>. La IA leera la receta y calculara la nutricion de tu porcion.</li>
+                    <li>Revisa los <strong>datos nutricionales pre-llenados</strong> (un banner azul indica que los datos fueron llenados por la IA). Edita cualquier campo si es necesario y toca <strong>"Guardar Alimento"</strong>.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Soporte multi-pagina:</strong> Para recetas largas, agrega todas las paginas que necesites. La IA las procesa juntas para obtener resultados precisos.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Barcode Scanner & Manual Entry (NEW) -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2>Escaner de codigo de barras y entrada manual</h2>
+            </div>
+            <div class="step-body">
+                <p>Ademas de las fotos, CaloriSnap ofrece dos formas adicionales de registrar tus alimentos:</p>
+                <ul>
+                    <li><strong>Escaner de codigo de barras:</strong> Toca <strong>"Escanear Codigo de Barras"</strong> desde la pantalla principal y apunta tu camara al codigo de barras de cualquier producto. La informacion nutricional aparecera al instante desde la base de datos.</li>
+                    <li><strong>Entrada manual:</strong> Toca <strong>"Entrada Manual"</strong> para buscar un alimento en la base de datos o ingresar los valores nutricionales tu mismo. Ideal para comidas caseras donde conoces los ingredientes exactos.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Consejo:</strong> Todos los metodos de entrada &mdash; foto, receta, codigo de barras y manual &mdash; se guardan en el mismo registro, asi tu dashboard siempre muestra el panorama completo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Water Tracking (NEW) -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2>Registra tu consumo de agua</h2>
+            </div>
+            <div class="step-body">
+                <p>Mantente hidratado registrando tu consumo diario de agua:</p>
+                <ol>
+                    <li>En la pantalla principal, toca la <strong>tarjeta de agua</strong> para abrir el Seguimiento de Agua.</li>
+                    <li>Usa los botones rapidos de <strong>+250 ml</strong> o <strong>+500 ml</strong> para registrar cada vaso o botella.</li>
+                    <li>Establece tu <strong>meta diaria de agua</strong> personalizada (por defecto: 2,000 ml).</li>
+                    <li>Consulta tu <strong>grafica semanal de hidratacion</strong> para ver tus tendencias.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Widget de iOS:</strong> Agrega el widget de agua de CaloriSnap a tu pantalla de inicio para ver tu progreso de un vistazo. Manten presionada tu pantalla de inicio &rarr; toca <strong>"+"</strong> &rarr; busca <strong>"CaloriSnap"</strong> &rarr; agrega el widget. ¡Puedes registrar agua directamente desde el widget sin abrir la app!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: AI Nutrition Advisor (NEW) -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <h2>Chatea con tu nutriologo de IA</h2>
+            </div>
+            <div class="step-body">
+                <p>CaloriSnap incluye un asesor nutricional de IA personal disponible en cualquier momento:</p>
+                <ol>
+                    <li>En la pantalla principal, toca <strong>"Asesor Nutricional IA"</strong>.</li>
+                    <li>Haz cualquier pregunta sobre nutricion. Por ejemplo:
+                        <ul>
+                            <li>"¿Que deberia desayunar para obtener mas proteina?"</li>
+                            <li>"¿Mi dieta esta balanceada esta semana?"</li>
+                            <li>"Sugiereme una cena baja en carbohidratos"</li>
+                        </ul>
+                    </li>
+                    <li>La IA toma en cuenta tu <strong>historial alimenticio</strong> para darte sugerencias personalizadas.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Consejo:</strong> Entre mas comidas registres, mejor entendera la IA tus habitos y podra darte consejos mas personalizados.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 8: Dashboard -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">8</div>
                 <h2>Consulta tu dashboard</h2>
             </div>
             <div class="step-body">
@@ -450,16 +552,17 @@
                     <li><strong>Calorias consumidas</strong> en el dia</li>
                     <li><strong>Calorias quemadas</strong> (si conectas Apple Health)</li>
                     <li><strong>Balance calorico</strong> del dia</li>
+                    <li><strong>Consumo de agua</strong> del dia</li>
                     <li><strong>Resumen general:</strong> total de comidas, calorias acumuladas y promedio por comida</li>
                 </ul>
                 <p>Puedes cambiar el periodo de consulta entre <strong>7, 15 o 30 dias</strong> para ver tus tendencias.</p>
             </div>
         </div>
 
-        <!-- Step 5: Stats and charts -->
+        <!-- Step 9: Stats and charts -->
         <div class="guide-step">
             <div class="step-header">
-                <div class="step-number">5</div>
+                <div class="step-number">9</div>
                 <h2>Revisa graficas y estadisticas</h2>
             </div>
             <div class="step-body">
@@ -472,34 +575,22 @@
             </div>
         </div>
 
-        <!-- Step 6: Export -->
+        <!-- Step 10: Export & Notifications -->
         <div class="guide-step">
             <div class="step-header">
-                <div class="step-number">6</div>
-                <h2>Exporta tus datos</h2>
+                <div class="step-number">10</div>
+                <h2>Exporta datos y configura recordatorios</h2>
             </div>
             <div class="step-body">
-                <p>Comparte tu registro nutricional con tu nutriologo o guardalo para tus registros:</p>
+                <p><strong>Exporta tus datos</strong> &mdash; comparte tu registro nutricional con tu nutriologo o guardalo para tus registros:</p>
                 <ul>
                     <li><strong>CSV:</strong> ideal para abrir en Excel o Google Sheets</li>
                     <li><strong>Texto:</strong> formato legible para enviar por correo o mensajeria</li>
                     <li><strong>JSON:</strong> formato estructurado para integraciones</li>
                 </ul>
                 <p>Accede a esta funcion desde la seccion de <strong>"Exportar"</strong> en la app.</p>
-                <div class="highlight-box">
-                    <p><strong>Para nutriologos:</strong> El formato CSV es el mas practico para revisar el registro de tus pacientes en una hoja de calculo.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Step 7: Notifications -->
-        <div class="guide-step">
-            <div class="step-header">
-                <div class="step-number">7</div>
-                <h2>Configura tus recordatorios</h2>
-            </div>
-            <div class="step-body">
-                <p>Para no olvidar registrar tus comidas, activa los recordatorios:</p>
+                <div class="divider" style="margin: 24px 0;"></div>
+                <p><strong>Configura recordatorios</strong> &mdash; para no olvidar registrar tus comidas:</p>
                 <ol>
                     <li>Ve a la seccion de <strong>Notificaciones</strong> desde la pantalla principal.</li>
                     <li>Activa <strong>"Habilitar Notificaciones"</strong>.</li>
@@ -512,6 +603,9 @@
                         </ul>
                     </li>
                 </ol>
+                <div class="highlight-box">
+                    <p><strong>Para nutriologos:</strong> El formato CSV es el mas practico para revisar el registro de tus pacientes en una hoja de calculo.</p>
+                </div>
             </div>
         </div>
 
@@ -524,22 +618,32 @@
                 <div class="summary-card">
                     <div class="summary-icon">📸</div>
                     <h3>Foto</h3>
-                    <p>Toma una foto de tu comida</p>
+                    <p>Toma una foto para analisis instantaneo con IA</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📖</div>
+                    <h3>Recetas</h3>
+                    <p>Escanea recetas y obtén nutricion por porcion</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📷</div>
+                    <h3>Codigo de barras</h3>
+                    <p>Escanea productos para datos instantaneos</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">💧</div>
+                    <h3>Agua</h3>
+                    <p>Registra tu hidratacion con botones rapidos</p>
                 </div>
                 <div class="summary-card">
                     <div class="summary-icon">🤖</div>
-                    <h3>Analisis</h3>
-                    <p>La IA calcula calorias y macros</p>
+                    <h3>Asesor IA</h3>
+                    <p>Chatea con tu nutriologo personal de IA</p>
                 </div>
                 <div class="summary-card">
                     <div class="summary-icon">📊</div>
-                    <h3>Revisa</h3>
-                    <p>Consulta tu dashboard y graficas</p>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-icon">📤</div>
-                    <h3>Comparte</h3>
-                    <p>Exporta datos a tu nutriologo</p>
+                    <h3>Dashboard</h3>
+                    <p>Graficas, tendencias y estadisticas nutricionales</p>
                 </div>
             </div>
         </div>
@@ -547,13 +651,13 @@
         <!-- Support CTA -->
         <div class="guide-cta">
             <h2>¿Necesitas ayuda?</h2>
-            <p>Si tienes dudas o problemas tecnicos durante el programa piloto, contactanos directamente.</p>
-            <a href="mailto:support@wiseailabs.com?subject=Soporte%20Piloto%20CaloriSnap" class="btn-primary">
+            <p>Si tienes dudas o problemas tecnicos, contactanos directamente.</p>
+            <a href="mailto:support@wiseailabs.com?subject=Soporte%20CaloriSnap" class="btn-primary">
                 Contactar soporte
             </a>
             <br>
             <a href="/calorisnap/landing" class="btn-secondary">
-                ← Volver al landing page
+                &larr; Volver al landing page
             </a>
         </div>
 

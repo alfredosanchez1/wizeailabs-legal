@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CaloriSnap - Quick Start Guide</title>
-    <meta name="description" content="Quick start guide for CaloriSnap. Learn how to analyze your meals with artificial intelligence.">
+    <meta name="description" content="Quick start guide for CaloriSnap. Learn how to analyze your meals with artificial intelligence, scan recipes, track water, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -230,7 +230,7 @@
 
         .summary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 16px;
         }
 
@@ -348,12 +348,13 @@
             .guide-header h1 { font-size: 2rem; }
             .step-header h2 { font-size: 1.2rem; }
             .step-body { padding: 22px; }
-            .summary-grid { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 480px) {
             .guide-header h1 { font-size: 1.7rem; }
             .step-body { padding: 18px; }
+            .summary-grid { grid-template-columns: 1fr; }
         }
 
         /* Print */
@@ -375,9 +376,9 @@
 
     <!-- Header -->
     <header class="guide-header">
-        <span class="guide-badge">User Guide</span>
+        <span class="guide-badge">User Guide &mdash; v1.5.2</span>
         <h1>Quick Start Guide</h1>
-        <p>Start using CaloriSnap in minutes. This guide walks you through every step from downloading the app to your first nutritional analysis.</p>
+        <p>Start using CaloriSnap in minutes. This guide walks you through every feature, from photo analysis to recipe scanning, water tracking, and your personal AI nutritionist.</p>
         <div class="lang-switch">
             <a href="/calorisnap/guia">Leer en Espa&ntilde;ol</a>
         </div>
@@ -398,7 +399,7 @@
                     <li>Tap <strong>"Get"</strong> to install the app.</li>
                 </ol>
                 <div class="tip-box">
-                    <p><strong>Requirements:</strong> iPhone running iOS 16 or later.</p>
+                    <p><strong>Requirements:</strong> iPhone running iOS 16 or later. Available in English, Spanish, Portuguese, and French.</p>
                 </div>
             </div>
         </div>
@@ -449,10 +450,95 @@
             </div>
         </div>
 
-        <!-- Step 4: Dashboard -->
+        <!-- Step 4: Recipe Scanner (NEW) -->
         <div class="guide-step">
             <div class="step-header">
                 <div class="step-number">4</div>
+                <h2>Scan a recipe</h2>
+            </div>
+            <div class="step-body">
+                <p>Have a written or printed recipe? CaloriSnap can analyze it and calculate the nutrition per portion:</p>
+                <ol>
+                    <li>On the main screen, scroll to <strong>"Other Input Methods"</strong> and tap <strong>"Scan Recipe"</strong>.</li>
+                    <li>Take a photo of the recipe using your camera, or select one from your gallery.</li>
+                    <li>If the recipe spans multiple pages, tap <strong>"Add another page"</strong> to capture each one.</li>
+                    <li>Set how many <strong>portions the recipe makes</strong> and how many <strong>portions you are eating</strong>.</li>
+                    <li>Tap <strong>"Analyze Recipe"</strong>. The AI will read the recipe and calculate the nutrition for your portion.</li>
+                    <li>Review the <strong>pre-filled nutrition data</strong> (a blue banner indicates the data was filled by AI). Edit any field if needed, then tap <strong>"Save Food"</strong>.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Multi-page support:</strong> For long recipes, add as many pages as you need. The AI processes them all together to get accurate results.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Barcode Scanner & Manual Entry (NEW) -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2>Barcode scanner &amp; manual entry</h2>
+            </div>
+            <div class="step-body">
+                <p>Beyond photos, CaloriSnap offers two additional ways to log your food:</p>
+                <ul>
+                    <li><strong>Barcode Scanner:</strong> Tap <strong>"Scan Barcode"</strong> from the main screen, then point your camera at any product barcode. The nutritional information will appear instantly from the food database.</li>
+                    <li><strong>Manual Entry:</strong> Tap <strong>"Manual Entry"</strong> to search for a food item in the database or enter the nutritional values yourself. This is ideal for homemade meals where you know the exact ingredients.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> All input methods &mdash; photo, recipe, barcode, and manual &mdash; save to the same food log, so your dashboard always shows the complete picture.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Water Tracking (NEW) -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2>Track your water intake</h2>
+            </div>
+            <div class="step-body">
+                <p>Stay hydrated by tracking your daily water consumption:</p>
+                <ol>
+                    <li>On the main screen, tap the <strong>water card</strong> to open Water Tracking.</li>
+                    <li>Use the <strong>+250 ml</strong> or <strong>+500 ml</strong> quick-add buttons to log each glass or bottle.</li>
+                    <li>Set your personalized <strong>daily water goal</strong> (default: 2,000 ml).</li>
+                    <li>View your <strong>weekly hydration chart</strong> to see your trends over time.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>iOS Widget:</strong> Add the CaloriSnap water widget to your Home Screen for at-a-glance progress. Long-press your Home Screen &rarr; tap <strong>"+"</strong> &rarr; search for <strong>"CaloriSnap"</strong> &rarr; add the widget. You can log water directly from the widget without opening the app!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 7: AI Nutrition Advisor (NEW) -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <h2>Chat with your AI nutritionist</h2>
+            </div>
+            <div class="step-body">
+                <p>CaloriSnap includes a personal AI nutrition advisor available anytime:</p>
+                <ol>
+                    <li>On the main screen, tap <strong>"AI Nutrition Advisor"</strong>.</li>
+                    <li>Ask any nutrition question. For example:
+                        <ul>
+                            <li>"What should I eat for breakfast to get more protein?"</li>
+                            <li>"Is my diet balanced this week?"</li>
+                            <li>"Suggest a low-carb dinner"</li>
+                        </ul>
+                    </li>
+                    <li>The AI takes your <strong>eating history</strong> into account to give you personalized suggestions.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Tip:</strong> The more meals you log, the better the AI understands your habits and can provide tailored advice.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 8: Dashboard -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">8</div>
                 <h2>Check your dashboard</h2>
             </div>
             <div class="step-body">
@@ -461,16 +547,17 @@
                     <li><strong>Calories consumed</strong> today</li>
                     <li><strong>Calories burned</strong> (if you connect Apple Health)</li>
                     <li><strong>Caloric balance</strong> for the day</li>
+                    <li><strong>Water intake</strong> progress</li>
                     <li><strong>General summary:</strong> total meals, accumulated calories, and average per meal</li>
                 </ul>
                 <p>You can switch the time period between <strong>7, 15, or 30 days</strong> to see your trends.</p>
             </div>
         </div>
 
-        <!-- Step 5: Stats and charts -->
+        <!-- Step 9: Stats and charts -->
         <div class="guide-step">
             <div class="step-header">
-                <div class="step-number">5</div>
+                <div class="step-number">9</div>
                 <h2>Review charts and statistics</h2>
             </div>
             <div class="step-body">
@@ -483,34 +570,22 @@
             </div>
         </div>
 
-        <!-- Step 6: Export -->
+        <!-- Step 10: Export & Notifications -->
         <div class="guide-step">
             <div class="step-header">
-                <div class="step-number">6</div>
-                <h2>Export your data</h2>
+                <div class="step-number">10</div>
+                <h2>Export data &amp; set reminders</h2>
             </div>
             <div class="step-body">
-                <p>Share your nutritional log with your nutritionist or save it for your records:</p>
+                <p><strong>Export your data</strong> &mdash; share your nutritional log with your nutritionist or save it for your records:</p>
                 <ul>
                     <li><strong>CSV:</strong> ideal for opening in Excel or Google Sheets</li>
                     <li><strong>Text:</strong> readable format for sending via email or messaging</li>
                     <li><strong>JSON:</strong> structured format for integrations</li>
                 </ul>
                 <p>Access this feature from the <strong>"Export"</strong> section in the app.</p>
-                <div class="highlight-box">
-                    <p><strong>For nutritionists:</strong> The CSV format is the most practical way to review your patients' food logs in a spreadsheet.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Step 7: Notifications -->
-        <div class="guide-step">
-            <div class="step-header">
-                <div class="step-number">7</div>
-                <h2>Set up your reminders</h2>
-            </div>
-            <div class="step-body">
-                <p>To make sure you never forget to log your meals, enable reminders:</p>
+                <div class="divider" style="margin: 24px 0;"></div>
+                <p><strong>Set up reminders</strong> &mdash; never forget to log your meals:</p>
                 <ol>
                     <li>Go to the <strong>Notifications</strong> section from the main screen.</li>
                     <li>Turn on <strong>"Enable Notifications"</strong>.</li>
@@ -523,6 +598,9 @@
                         </ul>
                     </li>
                 </ol>
+                <div class="highlight-box">
+                    <p><strong>For nutritionists:</strong> The CSV export is the most practical way to review your patients' food logs in a spreadsheet.</p>
+                </div>
             </div>
         </div>
 
@@ -535,22 +613,32 @@
                 <div class="summary-card">
                     <div class="summary-icon">📸</div>
                     <h3>Photo</h3>
-                    <p>Take a photo of your meal</p>
+                    <p>Snap a photo for instant AI analysis</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📖</div>
+                    <h3>Recipes</h3>
+                    <p>Scan recipes and get per-portion nutrition</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📷</div>
+                    <h3>Barcode</h3>
+                    <p>Scan products for instant data</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">💧</div>
+                    <h3>Water</h3>
+                    <p>Track hydration with quick-add buttons</p>
                 </div>
                 <div class="summary-card">
                     <div class="summary-icon">🤖</div>
-                    <h3>Analysis</h3>
-                    <p>AI calculates calories and macros</p>
+                    <h3>AI Advisor</h3>
+                    <p>Chat with your personal nutritionist</p>
                 </div>
                 <div class="summary-card">
                     <div class="summary-icon">📊</div>
-                    <h3>Review</h3>
-                    <p>Check your dashboard and charts</p>
-                </div>
-                <div class="summary-card">
-                    <div class="summary-icon">📤</div>
-                    <h3>Share</h3>
-                    <p>Export data to your nutritionist</p>
+                    <h3>Dashboard</h3>
+                    <p>Charts, trends, and nutrition stats</p>
                 </div>
             </div>
         </div>
@@ -574,8 +662,8 @@
     <footer class="guide-footer">
         <p>&copy; 2026 WiseAI Labs. All rights reserved.</p>
         <div class="footer-links">
-            <a href="/calorisnap/privacy-policy">Privacy Policy</a>
-            <a href="/calorisnap/terms-of-service">Terms of Service</a>
+            <a href="/calorisnap/privacy-policy-en">Privacy Policy</a>
+            <a href="/calorisnap/terms-of-service-en">Terms of Service</a>
             <a href="mailto:support@wiseailabs.com">Contact</a>
         </div>
     </footer>
