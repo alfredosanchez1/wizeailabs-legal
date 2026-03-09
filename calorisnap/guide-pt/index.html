@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriSnap - Guia de In&iacute;cio R&aacute;pido</title>
+    <meta name="description" content="Guia de in&iacute;cio r&aacute;pido para CaloriSnap v1.8. Aprenda a analisar refei&ccedil;&otilde;es com IA, definir metas, acompanhar peso, &aacute;gua, jejum e muito mais.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0f1323;
+            --bg-card: #1a1f35;
+            --bg-card-alt: #1e2440;
+            --accent-purple: #7c5cfc;
+            --accent-blue: #4a90d9;
+            --accent-gradient: linear-gradient(135deg, #7c5cfc, #4a90d9);
+            --accent-green: #34d399;
+            --accent-yellow: #fbbf24;
+            --text-white: #ffffff;
+            --text-gray: #a0a8c0;
+            --text-light: #c8cee0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .guide-header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guide-badge {
+            display: inline-block;
+            background: rgba(52, 211, 153, 0.15);
+            color: var(--accent-green);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+
+        .guide-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        .guide-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .lang-switch a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .lang-switch a:hover {
+            text-decoration: underline;
+        }
+
+        .guide-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .guide-step {
+            margin-bottom: 48px;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .step-number {
+            flex: 0 0 auto;
+            width: 44px;
+            height: 44px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .step-body {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 28px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .step-body p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .step-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-body ol, .step-body ul {
+            margin: 12px 0 16px 24px;
+            color: var(--text-light);
+        }
+
+        .step-body li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .step-body li strong {
+            color: var(--text-white);
+        }
+
+        .highlight-box {
+            background: rgba(124, 92, 252, 0.1);
+            border: 1px solid rgba(124, 92, 252, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .highlight-box p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--accent-purple);
+        }
+
+        .tip-box {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .tip-box p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .tip-box strong {
+            color: var(--accent-green);
+        }
+
+        .warning-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .warning-box p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .warning-box strong {
+            color: var(--accent-yellow);
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin: 48px 0;
+        }
+
+        .summary-section {
+            margin-bottom: 48px;
+        }
+
+        .summary-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .summary-card {
+            background: var(--bg-card);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .summary-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .summary-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .summary-card p {
+            color: var(--text-gray);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .guide-cta {
+            text-align: center;
+            padding: 48px 28px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid rgba(124, 92, 252, 0.3);
+            margin-bottom: 48px;
+        }
+
+        .guide-cta h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .guide-cta p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(124, 92, 252, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-top: 16px;
+            transition: color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            color: var(--accent-blue);
+        }
+
+        .guide-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .guide-footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        .guide-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .guide-header { padding: 40px 20px 30px; }
+            .guide-header h1 { font-size: 2rem; }
+            .step-header h2 { font-size: 1.2rem; }
+            .step-body { padding: 22px; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .guide-header h1 { font-size: 1.7rem; }
+            .step-body { padding: 18px; }
+            .summary-grid { grid-template-columns: 1fr; }
+        }
+
+        @media print {
+            body { background: white; color: #212529; }
+            .guide-header h1 { background: none; -webkit-text-fill-color: #212529; }
+            .step-number { background: #333; color: white; -webkit-print-color-adjust: exact; }
+            .step-body, .summary-card, .guide-cta { border: 1px solid #ddd; background: #f9f9f9; }
+            .step-body p, .step-body li, .summary-card p, .guide-cta p { color: #444; }
+            .highlight-box, .tip-box, .warning-box { border: 1px solid #ccc; background: #f5f5f5; }
+            .highlight-box p, .tip-box p, .warning-box p { color: #444; }
+            .highlight-box strong { color: #5a3fd6; }
+            .tip-box strong { color: #059669; }
+            .warning-box strong { color: #d97706; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="guide-header">
+        <span class="guide-badge">Guia do Usu&aacute;rio &mdash; v1.8</span>
+        <h1>Guia de In&iacute;cio R&aacute;pido</h1>
+        <p>Comece a usar o CaloriSnap em minutos. Defina suas metas, analise refei&ccedil;&otilde;es com IA, acompanhe seu peso, &aacute;gua, jejum e muito mais.</p>
+        <div class="lang-switch">
+            <a href="/calorisnap/guide">English</a>
+            <a href="/calorisnap/guia">Espa&ntilde;ol</a>
+            <a href="/calorisnap/guide-fr">Fran&ccedil;ais</a>
+        </div>
+    </header>
+
+    <div class="guide-content">
+
+        <!-- Passo 1: Download -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>Baixe o aplicativo</h2>
+            </div>
+            <div class="step-body">
+                <ol>
+                    <li>Abra a <strong>App Store</strong> no seu iPhone.</li>
+                    <li>Pesquise por <strong>&ldquo;CaloriSnap&rdquo;</strong> ou acesse diretamente: <a href="https://apps.apple.com/app/id6752263995" target="_blank" style="color: var(--accent-purple);">Baixar CaloriSnap</a></li>
+                    <li>Toque em <strong>&ldquo;Obter&rdquo;</strong> para instalar o aplicativo.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Requisitos:</strong> iPhone com iOS 16 ou posterior. Dispon&iacute;vel em portugu&ecirc;s, ingl&ecirc;s, espanhol e franc&ecirc;s.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 2: Criar conta -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>Crie sua conta</h2>
+            </div>
+            <div class="step-body">
+                <ol>
+                    <li>Abra o CaloriSnap e toque em <strong>&ldquo;Criar Conta&rdquo;</strong>.</li>
+                    <li>Insira seu <strong>endere&ccedil;o de e-mail</strong> e crie uma <strong>senha</strong>.</li>
+                    <li>Verifique sua caixa de entrada e <strong>confirme seu e-mail</strong> tocando no link recebido.</li>
+                    <li>Fa&ccedil;a login com suas credenciais.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Seguran&ccedil;a:</strong> Voc&ecirc; pode ativar o Face ID ou Touch ID nas configura&ccedil;&otilde;es do aplicativo para proteger seus dados.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 3: Perfil e metas -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2>Configure seu perfil e metas</h2>
+            </div>
+            <div class="step-body">
+                <p>No seu primeiro login, o CaloriSnap ir&aacute; gui&aacute;-lo por um assistente de configura&ccedil;&atilde;o em 4 etapas:</p>
+                <ol>
+                    <li><strong>Dados pessoais:</strong> Insira sua idade, sexo, altura e peso atual.</li>
+                    <li><strong>Meta de peso:</strong> Defina seu peso alvo e o ritmo semanal (perder, manter ou ganhar).</li>
+                    <li><strong>Atividade e objetivo:</strong> Escolha seu n&iacute;vel de atividade f&iacute;sica e objetivo principal.</li>
+                    <li><strong>Suas metas:</strong> O aplicativo calcula seu or&ccedil;amento cal&oacute;rico di&aacute;rio e metas de macronutrientes (prote&iacute;na, carboidratos, gordura) com base no seu perfil.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Dica:</strong> Voc&ecirc; pode atualizar seu perfil a qualquer momento na aba <strong>Perfil</strong>. Seu or&ccedil;amento cal&oacute;rico se ajusta automaticamente quando voc&ecirc; altera suas metas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 4: Tela inicial -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <h2>Navegue pela tela inicial</h2>
+            </div>
+            <div class="step-body">
+                <p>A tela inicial &eacute; seu centro de controle di&aacute;rio:</p>
+                <ul>
+                    <li><strong>Anel de Calorias:</strong> Um indicador circular mostrando quantas calorias voc&ecirc; consumiu em rela&ccedil;&atilde;o &agrave; sua meta di&aacute;ria.</li>
+                    <li><strong>Barras de Macros:</strong> Barras de progresso individuais para prote&iacute;na, carboidratos e gordura com suas metas personalizadas.</li>
+                    <li><strong>Di&aacute;rio Alimentar:</strong> Todas as suas refei&ccedil;&otilde;es organizadas por tipo (Caf&eacute; da Manh&atilde;, Almo&ccedil;o, Jantar, Lanche).</li>
+                    <li><strong>Acesso R&aacute;pido:</strong> Atalhos para seus recursos favoritos em uma grade 2&times;2.</li>
+                    <li><strong>Barra de Abas:</strong> Navegue entre In&iacute;cio, Painel, &Aacute;gua e Perfil usando as abas na parte inferior.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>O bot&atilde;o +:</strong> Toque no bot&atilde;o flutuante <strong>&ldquo;+&rdquo;</strong> na parte inferior central para registrar comida rapidamente via foto, galeria, escanear receita, c&oacute;digo de barras, ditar ingredientes ou entrada manual.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 5: Analisar refei&ccedil;&atilde;o -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <h2>Analise uma refei&ccedil;&atilde;o</h2>
+            </div>
+            <div class="step-body">
+                <ol>
+                    <li>Toque no bot&atilde;o flutuante <strong>&ldquo;+&rdquo;</strong> e selecione <strong>&ldquo;Tirar Foto&rdquo;</strong>.</li>
+                    <li>Tire uma <strong>foto n&iacute;tida</strong> da sua comida. Certifique-se de que o prato esteja totalmente vis&iacute;vel e bem iluminado.</li>
+                    <li>Opcionalmente, toque em <strong>&ldquo;Adicionar nota de voz&rdquo;</strong> para dar mais contexto sobre sua refei&ccedil;&atilde;o (&uacute;til para especificar quantidades ou ingredientes).</li>
+                    <li>A IA analisar&aacute; a imagem e exibir&aacute;:
+                        <ul>
+                            <li><strong>Nome do prato</strong> identificado</li>
+                            <li><strong>Calorias</strong> totais estimadas</li>
+                            <li><strong>Macronutrientes:</strong> prote&iacute;na, carboidratos, gordura</li>
+                            <li><strong>Detalhe adicional:</strong> a&ccedil;&uacute;car e fibra</li>
+                        </ul>
+                    </li>
+                    <li>Revise os resultados. Voc&ecirc; pode editar qualquer valor antes de salvar.</li>
+                    <li>Toque em <strong>&ldquo;Salvar Alimento&rdquo;</strong> para registr&aacute;-lo, ou <strong>&ldquo;Descartar&rdquo;</strong> para ignorar.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Galeria:</strong> Voc&ecirc; tamb&eacute;m pode selecionar uma foto existente da sua galeria escolhendo <strong>&ldquo;Fotos Armazenadas&rdquo;</strong> no menu +.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 6: Mais m&eacute;todos -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <h2>Mais formas de registrar comida</h2>
+            </div>
+            <div class="step-body">
+                <p>Al&eacute;m das fotos, o CaloriSnap oferece v&aacute;rios m&eacute;todos adicionais no menu <strong>&ldquo;+&rdquo;</strong>:</p>
+                <ul>
+                    <li><strong>Escanear Receita:</strong> Fotografe uma receita escrita ou impressa. Indique quantas por&ccedil;&otilde;es a receita rende e quantas voc&ecirc; vai comer. A IA l&ecirc; a receita e calcula a nutri&ccedil;&atilde;o por por&ccedil;&atilde;o. Suporta m&uacute;ltiplas p&aacute;ginas.</li>
+                    <li><strong>Ditar Ingredientes:</strong> Fale ou digite seus ingredientes e quantidades. A IA analisa e calcula a nutri&ccedil;&atilde;o &mdash; sem necessidade de foto.</li>
+                    <li><strong>Escanear C&oacute;digo de Barras:</strong> Aponte sua c&acirc;mera para o c&oacute;digo de barras de qualquer produto para obter dados nutricionais instant&acirc;neos.</li>
+                    <li><strong>Entrada Manual:</strong> Pesquise um alimento no banco de dados ou insira os valores nutricionais voc&ecirc; mesmo. Ideal para refei&ccedil;&otilde;es caseiras.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Dica:</strong> Todos os m&eacute;todos de entrada salvam no mesmo registro, ent&atilde;o seu anel de calorias e macros sempre mostram o panorama completo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 7: Favoritos e recentes -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <h2>Favoritos e refei&ccedil;&otilde;es recentes</h2>
+            </div>
+            <div class="step-body">
+                <p>Economize tempo registrando novamente refei&ccedil;&otilde;es que voc&ecirc; come com frequ&ecirc;ncia:</p>
+                <ul>
+                    <li><strong>Adicionar aos favoritos:</strong> Ap&oacute;s salvar qualquer alimento, toque no <strong>&iacute;cone de cora&ccedil;&atilde;o</strong> para adicion&aacute;-lo aos seus favoritos.</li>
+                    <li><strong>Registrar novamente um favorito:</strong> V&aacute; em <strong>&ldquo;Favoritos&rdquo;</strong> no Acesso R&aacute;pido para ver suas refei&ccedil;&otilde;es salvas e registr&aacute;-las novamente com um toque.</li>
+                    <li><strong>Refei&ccedil;&otilde;es recentes:</strong> Toque em <strong>&ldquo;Recentes&rdquo;</strong> para ver suas &uacute;ltimas entradas e registrar novamente qualquer uma delas rapidamente.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>Registro com um toque:</strong> Registrar novamente uma refei&ccedil;&atilde;o copia todos os dados nutricionais instantaneamente &mdash; sem necessidade de escanear ou fotografar novamente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 8: &Aacute;gua -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">8</div>
+                <h2>Acompanhe seu consumo de &aacute;gua</h2>
+            </div>
+            <div class="step-body">
+                <p>Mantenha-se hidratado acompanhando seu consumo di&aacute;rio de &aacute;gua:</p>
+                <ol>
+                    <li>Toque na aba <strong>&Aacute;gua</strong> na barra de navega&ccedil;&atilde;o inferior.</li>
+                    <li>Use os bot&otilde;es r&aacute;pidos de <strong>+250 ml</strong> ou <strong>+500 ml</strong> para registrar cada copo ou garrafa.</li>
+                    <li>Defina sua <strong>meta di&aacute;ria de &aacute;gua</strong> personalizada (padr&atilde;o: 2.000 ml).</li>
+                    <li>Consulte seu <strong>gr&aacute;fico semanal de hidrata&ccedil;&atilde;o</strong> para ver suas tend&ecirc;ncias.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Widget iOS:</strong> Adicione o widget de &aacute;gua do CaloriSnap &agrave; sua tela inicial para ver seu progresso rapidamente. Mantenha pressionada a tela &rarr; toque em <strong>&ldquo;+&rdquo;</strong> &rarr; pesquise <strong>&ldquo;CaloriSnap&rdquo;</strong> &rarr; adicione o widget.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 9: Jejum intermitente -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">9</div>
+                <h2>Jejum intermitente</h2>
+            </div>
+            <div class="step-body">
+                <p>Acompanhe suas janelas de jejum diretamente no CaloriSnap:</p>
+                <ol>
+                    <li>Na tela inicial, toque no cart&atilde;o de <strong>Jejum</strong> ou acesse pelo Acesso R&aacute;pido.</li>
+                    <li>Escolha um protocolo de jejum (ex: <strong>16:8</strong>, <strong>18:6</strong>, <strong>20:4</strong> ou personalizado).</li>
+                    <li>Toque em <strong>&ldquo;Iniciar Jejum&rdquo;</strong> para come&ccedil;ar seu temporizador.</li>
+                    <li>O temporizador mostra seu tempo decorrido e progresso em dire&ccedil;&atilde;o &agrave; sua meta de jejum.</li>
+                    <li>Quando estiver pronto, toque em <strong>&ldquo;Encerrar Jejum&rdquo;</strong> para registrar a sess&atilde;o conclu&iacute;da.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Dica:</strong> Seu hist&oacute;rico de jejum &eacute; salvo para que voc&ecirc; possa acompanhar sua consist&ecirc;ncia ao longo do tempo.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 10: Peso -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">10</div>
+                <h2>Acompanhamento de peso e metas</h2>
+            </div>
+            <div class="step-body">
+                <p>Monitore seu progresso de peso e mantenha-se no caminho certo:</p>
+                <ol>
+                    <li>V&aacute; em <strong>&ldquo;Minhas Metas&rdquo;</strong> na tela inicial e toque em <strong>&ldquo;Meta de Peso&rdquo;</strong>.</li>
+                    <li>Veja seu painel de progresso com peso atual, peso alvo e tempo estimado para alcan&ccedil;&aacute;-lo.</li>
+                    <li>Toque em <strong>&ldquo;Registrar Peso&rdquo;</strong> para anotar uma nova pesagem.</li>
+                    <li>Veja seu <strong>gr&aacute;fico de tend&ecirc;ncia de peso</strong> para observar como seu peso mudou ao longo do tempo.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Apple Health:</strong> Se voc&ecirc; tem uma balan&ccedil;a inteligente conectada ao Apple Health, o CaloriSnap pode importar seus dados de peso automaticamente. Ative em Perfil &rarr; Configura&ccedil;&otilde;es do Apple Health.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 11: Painel -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">11</div>
+                <h2>Painel e metas di&aacute;rias</h2>
+            </div>
+            <div class="step-body">
+                <p>Toque na aba <strong>Painel</strong> para ver seu resumo di&aacute;rio completo:</p>
+                <ul>
+                    <li><strong>Cart&atilde;o de Meta Di&aacute;ria:</strong> Mostra seu or&ccedil;amento cal&oacute;rico, calorias consumidas e restantes.</li>
+                    <li><strong>Dados do Apple Health:</strong> Passos dados e calorias queimadas (se conectado).</li>
+                    <li><strong>Restante ajustado:</strong> Sua meta cal&oacute;rica menos o consumido mais o queimado &mdash; dando a voc&ecirc; um objetivo di&aacute;rio din&acirc;mico.</li>
+                    <li><strong>Consumo de &aacute;gua</strong> do dia.</li>
+                    <li><strong>Resumo de refei&ccedil;&otilde;es:</strong> Total de refei&ccedil;&otilde;es, calorias acumuladas e m&eacute;dia por refei&ccedil;&atilde;o.</li>
+                </ul>
+                <p>Alterne entre <strong>7, 15 ou 30 dias</strong> para ver suas tend&ecirc;ncias ao longo do tempo.</p>
+            </div>
+        </div>
+
+        <!-- Passo 12: Sequ&ecirc;ncias e widgets -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">12</div>
+                <h2>Sequ&ecirc;ncias, conquistas e widgets</h2>
+            </div>
+            <div class="step-body">
+                <p><strong>Sequ&ecirc;ncias:</strong> Registre suas refei&ccedil;&otilde;es de forma consistente para construir uma sequ&ecirc;ncia. Sua sequ&ecirc;ncia atual &eacute; exibida na tela inicial. Continue registrando diariamente para ganhar conquistas!</p>
+                <p><strong>Widgets iOS:</strong> O CaloriSnap oferece v&aacute;rios widgets para sua tela inicial e tela de bloqueio:</p>
+                <ul>
+                    <li><strong>Widget de Calorias:</strong> Mostra seu progresso cal&oacute;rico di&aacute;rio rapidamente.</li>
+                    <li><strong>Widget de &Aacute;gua:</strong> Acompanhe sua hidrata&ccedil;&atilde;o sem abrir o aplicativo.</li>
+                    <li><strong>Widget de Sequ&ecirc;ncia:</strong> Veja sua sequ&ecirc;ncia de registro atual.</li>
+                    <li><strong>Widget Nutricional:</strong> Detalhamento de macros em tamanho m&eacute;dio.</li>
+                    <li><strong>Widget Painel:</strong> Um widget grande com sua vis&atilde;o di&aacute;ria completa.</li>
+                    <li><strong>StandBy e Tela de Bloqueio:</strong> Widgets otimizados para o modo StandBy e a tela de bloqueio.</li>
+                </ul>
+                <div class="tip-box">
+                    <p><strong>Como adicionar:</strong> Mantenha pressionada sua tela inicial &rarr; toque em <strong>&ldquo;+&rdquo;</strong> &rarr; pesquise <strong>&ldquo;CaloriSnap&rdquo;</strong> &rarr; escolha um tamanho e estilo de widget.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 13: Consultor IA -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">13</div>
+                <h2>Converse com seu nutricionista de IA</h2>
+            </div>
+            <div class="step-body">
+                <p>O CaloriSnap inclui um consultor nutricional de IA pessoal dispon&iacute;vel a qualquer momento:</p>
+                <ol>
+                    <li>No Acesso R&aacute;pido, toque em <strong>&ldquo;Consultor Nutricional IA&rdquo;</strong>.</li>
+                    <li>Fa&ccedil;a qualquer pergunta sobre nutri&ccedil;&atilde;o. Por exemplo:
+                        <ul>
+                            <li>&ldquo;O que devo comer no caf&eacute; da manh&atilde; para ter mais prote&iacute;na?&rdquo;</li>
+                            <li>&ldquo;Minha dieta est&aacute; equilibrada esta semana?&rdquo;</li>
+                            <li>&ldquo;Sugira um jantar baixo em carboidratos&rdquo;</li>
+                        </ul>
+                    </li>
+                    <li>A IA considera seu <strong>hist&oacute;rico alimentar</strong> para dar sugest&otilde;es personalizadas.</li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>Dica:</strong> Quanto mais refei&ccedil;&otilde;es voc&ecirc; registrar, melhor a IA entende seus h&aacute;bitos e pode fornecer conselhos personalizados.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passo 14: Gr&aacute;ficos, exportar, notifica&ccedil;&otilde;es -->
+        <div class="guide-step">
+            <div class="step-header">
+                <div class="step-number">14</div>
+                <h2>Gr&aacute;ficos, exportar e notifica&ccedil;&otilde;es</h2>
+            </div>
+            <div class="step-body">
+                <p><strong>Gr&aacute;ficos e estat&iacute;sticas:</strong></p>
+                <ul>
+                    <li><strong>Calorias por dia:</strong> Gr&aacute;fico de linha mostrando seu consumo di&aacute;rio.</li>
+                    <li><strong>Distribui&ccedil;&atilde;o de refei&ccedil;&otilde;es:</strong> Gr&aacute;fico circular mostrando a porcentagem de cada tipo de refei&ccedil;&atilde;o.</li>
+                    <li><strong>Estat&iacute;sticas nutricionais:</strong> Detalhamento completo de prote&iacute;na, carboidratos, gordura, a&ccedil;&uacute;car e fibra com totais e m&eacute;dias.</li>
+                </ul>
+                <div class="divider" style="margin: 24px 0;"></div>
+                <p><strong>Exporte seus dados</strong> &mdash; compartilhe seu registro nutricional com seu nutricionista ou salve-o:</p>
+                <ul>
+                    <li><strong>CSV:</strong> Ideal para Excel ou Google Sheets.</li>
+                    <li><strong>Texto:</strong> Formato leg&iacute;vel para e-mail ou mensagens.</li>
+                    <li><strong>JSON:</strong> Formato estruturado para integra&ccedil;&otilde;es.</li>
+                </ul>
+                <div class="divider" style="margin: 24px 0;"></div>
+                <p><strong>Configure lembretes</strong> &mdash; para nunca esquecer de registrar suas refei&ccedil;&otilde;es:</p>
+                <ol>
+                    <li>V&aacute; em <strong>Notifica&ccedil;&otilde;es</strong> na aba Perfil.</li>
+                    <li>Ative <strong>&ldquo;Lembretes de Refei&ccedil;&otilde;es&rdquo;</strong> e defina os hor&aacute;rios para Caf&eacute; da Manh&atilde;, Almo&ccedil;o, Jantar e Lanche.</li>
+                </ol>
+                <div class="highlight-box">
+                    <p><strong>Para nutricionistas:</strong> O formato CSV &eacute; a forma mais pr&aacute;tica de revisar os registros alimentares dos seus pacientes em uma planilha.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Resumo r&aacute;pido -->
+        <div class="summary-section">
+            <h2>Resumo r&aacute;pido</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-icon">📸</div>
+                    <h3>Foto</h3>
+                    <p>Tire uma foto para an&aacute;lise instant&acirc;nea com IA</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🎯</div>
+                    <h3>Metas</h3>
+                    <p>Calorias e macros personalizados</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">⚖️</div>
+                    <h3>Peso</h3>
+                    <p>Acompanhe seu progresso rumo ao peso alvo</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">💧</div>
+                    <h3>&Aacute;gua</h3>
+                    <p>Registre sua hidrata&ccedil;&atilde;o com bot&otilde;es r&aacute;pidos</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">⏱️</div>
+                    <h3>Jejum</h3>
+                    <p>Controle suas janelas de jejum intermitente</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🔥</div>
+                    <h3>Sequ&ecirc;ncias</h3>
+                    <p>Seja consistente e ganhe conquistas</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🤖</div>
+                    <h3>Consultor IA</h3>
+                    <p>Converse com seu nutricionista pessoal de IA</p>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📊</div>
+                    <h3>Painel</h3>
+                    <p>Gr&aacute;ficos, tend&ecirc;ncias e estat&iacute;sticas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suporte -->
+        <div class="guide-cta">
+            <h2>Precisa de ajuda?</h2>
+            <p>Se voc&ecirc; tem d&uacute;vidas ou problemas t&eacute;cnicos, entre em contato conosco diretamente.</p>
+            <a href="mailto:support@wiseailabs.com?subject=Suporte%20CaloriSnap" class="btn-primary">
+                Contatar suporte
+            </a>
+            <br>
+            <a href="/calorisnap/landing" class="btn-secondary">
+                &larr; Voltar &agrave; p&aacute;gina inicial
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="guide-footer">
+        <p>&copy; 2026 WiseAI Labs. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="/calorisnap/privacy-policy-en">Pol&iacute;tica de Privacidade</a>
+            <a href="/calorisnap/terms-of-service-en">Termos de Servi&ccedil;o</a>
+            <a href="mailto:support@wiseailabs.com">Contato</a>
+        </div>
+    </footer>
+
+</body>
+</html>
