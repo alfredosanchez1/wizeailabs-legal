@@ -127,30 +127,44 @@
         }
 
         .android-note {
-            margin-top: 16px;
+            margin-top: 28px;
             font-size: 0.85rem;
             color: var(--text-gray);
         }
 
         /* Screenshots carousel */
         .screenshots {
-            padding: 40px 20px 80px;
-            overflow: hidden;
+            padding: 40px 0 80px;
         }
 
         .screenshots-track {
             display: flex;
             gap: 24px;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: nowrap;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
-            padding: 0 20px 20px;
-            scrollbar-width: none;
+            padding: 0 40px 20px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(124, 92, 252, 0.4) transparent;
+            cursor: grab;
         }
 
-        .screenshots-track::-webkit-scrollbar { display: none; }
+        .screenshots-track:active { cursor: grabbing; }
+
+        .screenshots-track::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .screenshots-track::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .screenshots-track::-webkit-scrollbar-thumb {
+            background: rgba(124, 92, 252, 0.4);
+            border-radius: 2px;
+        }
 
         .screenshot-item {
             flex: 0 0 auto;
@@ -369,14 +383,14 @@
     <!-- Screenshots -->
     <section class="screenshots">
         <div class="screenshots-track">
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_analisis.png" alt="Analisis nutricional con IA sin ingreso manual" loading="lazy"></div>
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_home.png" alt="Pantalla principal con metodos asistidos por IA" loading="lazy"></div>
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_dashboard.png" alt="Dashboard con integracion de Apple Health" loading="lazy"></div>
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_agua.png" alt="Registro de consumo de agua" loading="lazy"></div>
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_ayuno.png" alt="Ayuno intermitente" loading="lazy"></div>
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_peso.png" alt="Registro de peso y meta" loading="lazy"></div>
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_graficas.png" alt="Graficas de tendencias nutricionales" loading="lazy"></div>
-            <div class="screenshot-item"><img src="/calorisnap/landing/images/es_watch.png" alt="Apple Watch - rastrea calorias desde tu muneca" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_analisis.png" alt="Analisis nutricional con IA sin ingreso manual" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_home.png" alt="Pantalla principal con metodos asistidos por IA" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_dashboard.png" alt="Dashboard con integracion de Apple Health" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_agua.png" alt="Registro de consumo de agua" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_ayuno.png" alt="Ayuno intermitente" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_peso.png" alt="Registro de peso y meta" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_graficas.png" alt="Graficas de tendencias nutricionales" loading="lazy"></div>
+            <div class="screenshot-item"><img src="images/es_watch.png" alt="Apple Watch - rastrea calorias desde tu muneca" loading="lazy"></div>
         </div>
     </section>
 
