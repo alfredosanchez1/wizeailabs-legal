@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="es" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaloriSnap para Apple Watch</title>
+    <meta name="description" content="CaloriSnap para Apple Watch. Consulta tus calorias, agua y proteinas en la muneca. Complicaciones para tu caratula incluidas.">
+    <meta property="og:title" content="CaloriSnap para Apple Watch">
+    <meta property="og:description" content="Tu nutricion en la muneca. Calorias, agua y proteinas sin sacar el iPhone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://legal.wiseailabs.com/calorisnap/watch">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-dark: #0f1323;
+            --bg-card: #1a1f35;
+            --accent-purple: #7c5cfc;
+            --accent-blue: #4a90d9;
+            --accent-orange: #FF6B35;
+            --accent-gradient: linear-gradient(135deg, #7c5cfc, #4a90d9);
+            --text-white: #ffffff;
+            --text-gray: #a0a8c0;
+            --text-light: #c8cee0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top bar */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            position: sticky;
+            top: 0;
+            background: rgba(15,19,35,0.95);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .back-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--text-white); }
+
+        .lang-toggle {
+            display: flex;
+            background: rgba(255,255,255,0.06);
+            border-radius: 8px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--accent-gradient);
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 72px 20px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(124,92,252,0.15);
+            color: var(--accent-purple);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(124,92,252,0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            max-width: 520px;
+            margin: 0 auto 48px;
+        }
+
+        /* Watch mockup */
+        .watch-hero {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 48px;
+        }
+
+        .watch-svg-wrapper {
+            filter: drop-shadow(0 24px 64px rgba(124,92,252,0.35));
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* CTA */
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(124,92,252,0.4);
+        }
+
+        .btn-primary svg { width: 22px; height: 22px; }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--text-light);
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-purple);
+            color: white;
+        }
+
+        .compat-note {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 8px;
+        }
+
+        /* Section shared */
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.05rem;
+            margin-bottom: 52px;
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 20px 80px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(124,92,252,0.3);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.92rem;
+            line-height: 1.65;
+        }
+
+        /* Complications */
+        .complications {
+            padding: 80px 20px;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .comps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .comp-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 36px 28px;
+            border: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .comp-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .comp-card.orange { border-color: rgba(255,107,53,0.2); }
+        .comp-card.blue   { border-color: rgba(74,144,217,0.2); }
+        .comp-card.purple { border-color: rgba(124,92,252,0.2); }
+
+        .comp-card.orange:hover { border-color: rgba(255,107,53,0.5); }
+        .comp-card.blue:hover   { border-color: rgba(74,144,217,0.5); }
+        .comp-card.purple:hover { border-color: rgba(124,92,252,0.5); }
+
+        .comp-ring-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .comp-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .comp-card p {
+            color: var(--text-gray);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .comp-compat {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 0.82rem;
+            color: var(--text-gray);
+        }
+
+        /* Setup */
+        .setup {
+            padding: 80px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .step-number {
+            flex: 0 0 auto;
+            width: 48px;
+            height: 48px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .step-content p {
+            color: var(--text-gray);
+            font-size: 0.92rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 80px 20px;
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(124,92,252,0.3);
+            border-radius: 24px;
+            padding: 52px 36px;
+        }
+
+        .cta-card h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .cta-card p {
+            color: var(--text-gray);
+            margin-bottom: 28px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        .landing-footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-gray);
+            font-size: 0.85rem;
+        }
+
+        .landing-footer a {
+            color: var(--accent-purple);
+            text-decoration: none;
+        }
+
+        .landing-footer a:hover { text-decoration: underline; }
+
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Divider */
+        .section-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+            margin: 0 auto 52px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { padding: 56px 20px 16px; }
+            .hero h1 { font-size: 2.3rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .section-title { font-size: 1.75rem; }
+            .cta-card { padding: 36px 24px; }
+            .cta-card h2 { font-size: 1.55rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.9rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .topbar { padding: 12px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top bar -->
+    <nav class="topbar">
+        <a href="../landing/" class="back-link">
+            ← <span data-i18n="backLink">CaloriSnap</span>
+        </a>
+        <div class="lang-toggle">
+            <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+            <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <span class="hero-badge" data-i18n="badge">⌚ Nuevo · Apple Watch</span>
+        <h1 data-i18n="heroTitle">Tu nutricion<br>en la muneca</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">Consulta tus calorias, agua y proteinas sin sacar el iPhone. CaloriSnap sincroniza todo automaticamente con tu Apple Watch.</p>
+
+        <!-- Apple Watch SVG Mockup -->
+        <div class="watch-hero">
+            <div class="watch-svg-wrapper">
+                <svg viewBox="0 0 220 285" xmlns="http://www.w3.org/2000/svg" width="240" height="311" role="img" aria-label="Apple Watch con CaloriSnap">
+                    <defs>
+                        <linearGradient id="calGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FF6B35"/>
+                            <stop offset="100%" stop-color="#FFD166"/>
+                        </linearGradient>
+                        <linearGradient id="waterGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4a90d9"/>
+                            <stop offset="100%" stop-color="#56CCF2"/>
+                        </linearGradient>
+                        <linearGradient id="protGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#7c5cfc"/>
+                            <stop offset="100%" stop-color="#b47cff"/>
+                        </linearGradient>
+                        <linearGradient id="bandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#222"/>
+                            <stop offset="100%" stop-color="#111"/>
+                        </linearGradient>
+                        <clipPath id="screenClip">
+                            <rect x="16" y="47" width="188" height="188" rx="50"/>
+                        </clipPath>
+                    </defs>
+
+                    <!-- Band top -->
+                    <rect x="70" y="0" width="80" height="50" rx="12" fill="url(#bandGrad)"/>
+                    <!-- Band bottom -->
+                    <rect x="70" y="235" width="80" height="50" rx="12" fill="url(#bandGrad)"/>
+
+                    <!-- Watch body shadow -->
+                    <rect x="8" y="40" width="204" height="204" rx="56" fill="rgba(0,0,0,0.4)" transform="translate(2,4)"/>
+                    <!-- Watch body -->
+                    <rect x="8" y="40" width="204" height="204" rx="56" fill="#1c1c1e" stroke="#2e2e30" stroke-width="1.5"/>
+
+                    <!-- Screen background -->
+                    <rect x="16" y="47" width="188" height="188" rx="50" fill="#000"/>
+
+                    <!-- Digital crown -->
+                    <rect x="214" y="88" width="12" height="42" rx="6" fill="#2a2a2a" stroke="#383838" stroke-width="1"/>
+                    <!-- Side button -->
+                    <rect x="214" y="146" width="12" height="26" rx="4" fill="#2a2a2a" stroke="#383838" stroke-width="1"/>
+
+                    <!-- Screen content (clipped) -->
+                    <g clip-path="url(#screenClip)">
+                        <!-- Screen fill -->
+                        <rect x="16" y="47" width="188" height="188" fill="#050508"/>
+
+                        <!-- Header label -->
+                        <text x="110" y="72" text-anchor="middle" fill="#666" font-family="-apple-system, sans-serif" font-size="10" font-weight="500" letter-spacing="1">CALORISNAP</text>
+
+                        <!-- Main ring background -->
+                        <circle cx="110" cy="140" r="58" fill="none" stroke="#1e1e22" stroke-width="11"/>
+                        <!-- Main ring (75% filled) — circ(58)=364.4, 75%=273 -->
+                        <circle cx="110" cy="140" r="58"
+                            fill="none"
+                            stroke="url(#calGrad)"
+                            stroke-width="11"
+                            stroke-dasharray="273 91"
+                            stroke-linecap="round"
+                            transform="rotate(-90 110 140)"/>
+
+                        <!-- Center text -->
+                        <text x="110" y="132" text-anchor="middle" fill="white" font-family="-apple-system, sans-serif" font-size="28" font-weight="800">1,450</text>
+                        <text x="110" y="151" text-anchor="middle" fill="#888" font-family="-apple-system, sans-serif" font-size="11" font-weight="400">kcal</text>
+
+                        <!-- Bottom data row -->
+                        <!-- Water mini ring -->
+                        <circle cx="68" cy="208" r="16" fill="none" stroke="#1a1a22" stroke-width="4"/>
+                        <circle cx="68" cy="208" r="16" fill="none" stroke="url(#waterGradH)" stroke-width="4"
+                            stroke-dasharray="75 26" stroke-linecap="round" transform="rotate(-90 68 208)"/>
+                        <text x="68" y="212" text-anchor="middle" fill="white" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="600">1.8L</text>
+
+                        <!-- Protein mini ring -->
+                        <circle cx="110" cy="208" r="16" fill="none" stroke="#1a1a22" stroke-width="4"/>
+                        <circle cx="110" cy="208" r="16" fill="none" stroke="url(#protGradH)" stroke-width="4"
+                            stroke-dasharray="65 36" stroke-linecap="round" transform="rotate(-90 110 208)"/>
+                        <text x="110" y="212" text-anchor="middle" fill="white" font-family="-apple-system, sans-serif" font-size="7.5" font-weight="600">65g</text>
+
+                        <!-- Streak mini ring -->
+                        <circle cx="152" cy="208" r="16" fill="none" stroke="#1a1a22" stroke-width="4"/>
+                        <circle cx="152" cy="208" r="16" fill="none" stroke="#FF6B35" stroke-width="4"
+                            stroke-dasharray="80 21" stroke-linecap="round" transform="rotate(-90 152 208)"/>
+                        <text x="152" y="206" text-anchor="middle" fill="#FF6B35" font-family="-apple-system, sans-serif" font-size="9">🔥</text>
+                        <text x="152" y="216" text-anchor="middle" fill="white" font-family="-apple-system, sans-serif" font-size="6.5" font-weight="600">7d</text>
+
+                        <!-- Subtle screen glare -->
+                        <ellipse cx="90" cy="60" rx="60" ry="18" fill="rgba(255,255,255,0.03)"/>
+                    </g>
+
+                    <!-- Screen bezel overlay for depth -->
+                    <rect x="16" y="47" width="188" height="188" rx="50" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                </svg>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="https://apps.apple.com/app/id6752263995" target="_blank" class="btn-primary">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span data-i18n="downloadCta">Descargar en App Store</span>
+            </a>
+            <a href="../guia/" id="guide-link" class="btn-secondary" data-i18n="guideCta">Ver guia de uso</a>
+        </div>
+        <p class="compat-note" data-i18n="compatNote">Requiere Apple Watch Series 4 o posterior · watchOS 7+</p>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <h2 class="section-title" data-i18n="featuresTitle">Todo lo que necesitas, en tu muneca</h2>
+        <div class="section-divider"></div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3 data-i18n="f1Title">Resumen diario</h3>
+                <p data-i18n="f1Desc">Ve tu anillo de calorias, progreso de macros, agua e historial de racha directamente en tu Watch. Todo sincronizado con tu iPhone.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💧</span>
+                <h3 data-i18n="f2Title">Registro de agua rapido</h3>
+                <p data-i18n="f2Desc">Toca uno de los 4 botones (150, 250, 350 o 500 ml) para registrar agua desde tu muneca. Se sincroniza con el iPhone al instante.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">⌚</span>
+                <h3 data-i18n="f3Title">Complicaciones</h3>
+                <p data-i18n="f3Desc">Agrega anillos de progreso a tu caratula favorita. Calorias, agua y proteinas visibles de un vistazo. Se actualizan cada 15 minutos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complications -->
+    <section class="complications">
+        <h2 class="section-title" data-i18n="compsTitle">Complicaciones para tu caratula</h2>
+        <p class="section-subtitle" data-i18n="compsSubtitle">Tres anillos de progreso para mantener tu nutricion a la vista durante todo el dia.</p>
+
+        <div class="comps-grid">
+
+            <!-- Calorie Ring -->
+            <div class="comp-card orange">
+                <div class="comp-ring-wrapper">
+                    <svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="calCompGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FF6B35"/>
+                                <stop offset="100%" stop-color="#FFD166"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Watch face simulation -->
+                        <rect x="2" y="2" width="116" height="116" rx="28" fill="#111" stroke="#222" stroke-width="1"/>
+                        <!-- Ring bg -->
+                        <circle cx="60" cy="60" r="44" fill="none" stroke="#1e1e1e" stroke-width="9"/>
+                        <!-- Ring (75%) circ(44)=276.5, 75%=207 -->
+                        <circle cx="60" cy="60" r="44"
+                            fill="none" stroke="url(#calCompGrad)" stroke-width="9"
+                            stroke-dasharray="207 70" stroke-linecap="round"
+                            transform="rotate(-90 60 60)"/>
+                        <!-- Label -->
+                        <text x="60" y="54" text-anchor="middle" fill="white" font-family="-apple-system,sans-serif" font-size="16" font-weight="800">1,450</text>
+                        <text x="60" y="70" text-anchor="middle" fill="#FF6B35" font-family="-apple-system,sans-serif" font-size="10" font-weight="500">kcal</text>
+                    </svg>
+                </div>
+                <h3 data-i18n="c1Name">Anillo de Calorias</h3>
+                <p data-i18n="c1Desc">Muestra tus calorias restantes o el balance quemadas/consumidas cuando tienes Apple Health activo.</p>
+            </div>
+
+            <!-- Water Ring -->
+            <div class="comp-card blue">
+                <div class="comp-ring-wrapper">
+                    <svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="waterCompGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4a90d9"/>
+                                <stop offset="100%" stop-color="#56CCF2"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="2" y="2" width="116" height="116" rx="28" fill="#111" stroke="#222" stroke-width="1"/>
+                        <circle cx="60" cy="60" r="44" fill="none" stroke="#1e1e1e" stroke-width="9"/>
+                        <!-- Ring (80%) 0.8*276.5=221 -->
+                        <circle cx="60" cy="60" r="44"
+                            fill="none" stroke="url(#waterCompGrad)" stroke-width="9"
+                            stroke-dasharray="221 56" stroke-linecap="round"
+                            transform="rotate(-90 60 60)"/>
+                        <text x="60" y="54" text-anchor="middle" fill="white" font-family="-apple-system,sans-serif" font-size="17" font-weight="800">1.8L</text>
+                        <text x="60" y="70" text-anchor="middle" fill="#4a90d9" font-family="-apple-system,sans-serif" font-size="10" font-weight="500">agua</text>
+                    </svg>
+                </div>
+                <h3 data-i18n="c2Name">Anillo de Agua</h3>
+                <p data-i18n="c2Desc">Visualiza tu progreso de hidratacion diaria de un vistazo. Siempre al tanto de cuanta agua te falta.</p>
+            </div>
+
+            <!-- Protein Ring -->
+            <div class="comp-card purple">
+                <div class="comp-ring-wrapper">
+                    <svg viewBox="0 0 120 120" width="110" height="110" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="protCompGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7c5cfc"/>
+                                <stop offset="100%" stop-color="#b47cff"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="2" y="2" width="116" height="116" rx="28" fill="#111" stroke="#222" stroke-width="1"/>
+                        <circle cx="60" cy="60" r="44" fill="none" stroke="#1e1e1e" stroke-width="9"/>
+                        <!-- Ring (65%) 0.65*276.5=180 -->
+                        <circle cx="60" cy="60" r="44"
+                            fill="none" stroke="url(#protCompGrad)" stroke-width="9"
+                            stroke-dasharray="180 97" stroke-linecap="round"
+                            transform="rotate(-90 60 60)"/>
+                        <text x="60" y="54" text-anchor="middle" fill="white" font-family="-apple-system,sans-serif" font-size="18" font-weight="800">65g</text>
+                        <text x="60" y="70" text-anchor="middle" fill="#7c5cfc" font-family="-apple-system,sans-serif" font-size="10" font-weight="500">proteina</text>
+                    </svg>
+                </div>
+                <h3 data-i18n="c3Name">Anillo de Proteina</h3>
+                <p data-i18n="c3Desc">Rastrea tu consumo de proteina respecto a tu meta diaria. Nunca pierdas de vista tu objetivo.</p>
+            </div>
+        </div>
+
+        <p class="comp-compat" data-i18n="compsNote">Compatible con caratulas Infograph, Modular, California, Meridian y mas · .accessoryCircular &amp; .accessoryCorner</p>
+    </section>
+
+    <!-- Setup -->
+    <section class="setup">
+        <h2 class="section-title" data-i18n="setupTitle">Como configurarlo</h2>
+        <div class="section-divider"></div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 data-i18n="s1Title">Descarga CaloriSnap</h3>
+                    <p data-i18n="s1Desc">La app para Apple Watch se instala automaticamente junto con CaloriSnap en tu iPhone. Sin pasos adicionales.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 data-i18n="s2Title">Configura tu perfil</h3>
+                    <p data-i18n="s2Desc">Ingresa tus metas de calorias, agua y macros para ver tu progreso personalizado en el Watch.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 data-i18n="s3Title">Agrega complicaciones a tu caratula</h3>
+                    <p data-i18n="s3Desc">Manten presionada tu caratula → toca Editar → selecciona una ranura de complicacion → busca CaloriSnap y elige tu anillo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="cta-card">
+            <h2 data-i18n="ctaTitle">Descarga CaloriSnap gratis</h2>
+            <p data-i18n="ctaSubtitle">Disponible para iPhone y Apple Watch en el App Store.</p>
+            <a href="https://apps.apple.com/app/id6752263995" target="_blank" class="btn-primary">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span data-i18n="downloadCta">Descargar en App Store</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        <p id="footer-copy">&copy; 2026 WiseAI Labs. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a id="footer-privacy" href="../privacy-policy.html" data-i18n-href-es="../privacy-policy.html" data-i18n-href-en="../privacy-policy-en.html" data-i18n="footerPrivacy">Politica de Privacidad</a>
+            <a id="footer-terms" href="../terms-of-service.html" data-i18n-href-es="../terms-of-service.html" data-i18n-href-en="../terms-of-service-en.html" data-i18n="footerTerms">Terminos de Servicio</a>
+            <a href="mailto:support@wiseailabs.com" data-i18n="footerContact">Contacto</a>
+        </div>
+    </footer>
+
+    <script>
+        const i18n = {
+            es: {
+                pageTitle: "CaloriSnap para Apple Watch",
+                backLink: "CaloriSnap",
+                badge: "⌚ Nuevo · Apple Watch",
+                heroTitle: "Tu nutrici&oacute;n<br>en la mu&ntilde;eca",
+                heroSubtitle: "Consulta tus calor&iacute;as, agua y prote&iacute;nas sin sacar el iPhone. CaloriSnap sincroniza todo autom&aacute;ticamente con tu Apple Watch.",
+                downloadCta: "Descargar en App Store",
+                guideCta: "Ver gu&iacute;a de uso",
+                compatNote: "Requiere Apple Watch Series 4 o posterior &middot; watchOS 7+",
+                featuresTitle: "Todo lo que necesitas, en tu mu&ntilde;eca",
+                f1Title: "Resumen diario",
+                f1Desc: "Ve tu anillo de calor&iacute;as, progreso de macros, agua e historial de racha directamente en tu Watch. Todo sincronizado con tu iPhone.",
+                f2Title: "Registro de agua r&aacute;pido",
+                f2Desc: "Toca uno de los 4 botones (150, 250, 350 o 500 ml) para registrar agua desde tu mu&ntilde;eca. Se sincroniza con el iPhone al instante.",
+                f3Title: "Complicaciones",
+                f3Desc: "Agrega anillos de progreso a tu car&aacute;tula favorita. Calor&iacute;as, agua y prote&iacute;nas visibles de un vistazo. Se actualizan cada 15 minutos.",
+                compsTitle: "Complicaciones para tu car&aacute;tula",
+                compsSubtitle: "Tres anillos de progreso para mantener tu nutrici&oacute;n a la vista durante todo el d&iacute;a.",
+                c1Name: "Anillo de Calor&iacute;as",
+                c1Desc: "Muestra tus calor&iacute;as restantes o el balance quemadas/consumidas cuando tienes Apple Health activo.",
+                c2Name: "Anillo de Agua",
+                c2Desc: "Visualiza tu progreso de hidrataci&oacute;n diaria de un vistazo. Siempre al tanto de cu&aacute;nta agua te falta.",
+                c3Name: "Anillo de Prote&iacute;na",
+                c3Desc: "Rastrea tu consumo de prote&iacute;na respecto a tu meta diaria. Nunca pierdas de vista tu objetivo.",
+                compsNote: "Compatible con car&aacute;tulas Infograph, Modular, California, Meridian y m&aacute;s &middot; .accessoryCircular &amp; .accessoryCorner",
+                setupTitle: "C&oacute;mo configurarlo",
+                s1Title: "Descarga CaloriSnap",
+                s1Desc: "La app para Apple Watch se instala autom&aacute;ticamente junto con CaloriSnap en tu iPhone. Sin pasos adicionales.",
+                s2Title: "Configura tu perfil",
+                s2Desc: "Ingresa tus metas de calor&iacute;as, agua y macros para ver tu progreso personalizado en el Watch.",
+                s3Title: "Agrega complicaciones a tu car&aacute;tula",
+                s3Desc: "Mant&eacute;n presionada tu car&aacute;tula &rarr; toca Editar &rarr; selecciona una ranura de complicaci&oacute;n &rarr; busca CaloriSnap y elige tu anillo.",
+                ctaTitle: "Descarga CaloriSnap gratis",
+                ctaSubtitle: "Disponible para iPhone y Apple Watch en el App Store.",
+                footerCopy: "&copy; 2026 WiseAI Labs. Todos los derechos reservados.",
+                footerPrivacy: "Pol&iacute;tica de Privacidad",
+                footerTerms: "T&eacute;rminos de Servicio",
+                footerContact: "Contacto",
+            },
+            en: {
+                pageTitle: "CaloriSnap for Apple Watch",
+                backLink: "CaloriSnap",
+                badge: "⌚ New · Apple Watch",
+                heroTitle: "Your nutrition<br>on your wrist",
+                heroSubtitle: "Check your calories, water, and protein without reaching for your iPhone. CaloriSnap syncs everything automatically with your Apple Watch.",
+                downloadCta: "Download on App Store",
+                guideCta: "View user guide",
+                compatNote: "Requires Apple Watch Series 4 or later &middot; watchOS 7+",
+                featuresTitle: "Everything you need, on your wrist",
+                f1Title: "Daily summary",
+                f1Desc: "See your calorie ring, macro progress, water intake, and streak directly on your Watch. Always in sync with your iPhone.",
+                f2Title: "Quick water log",
+                f2Desc: "Tap one of 4 buttons (150, 250, 350, or 500 ml) to log water from your wrist. Syncs to your iPhone instantly.",
+                f3Title: "Complications",
+                f3Desc: "Add progress rings to your favorite watch face. Calories, water, and protein visible at a glance. Updates every 15 minutes.",
+                compsTitle: "Watch face complications",
+                compsSubtitle: "Three progress rings to keep your nutrition visible throughout the day.",
+                c1Name: "Calorie Ring",
+                c1Desc: "Shows your remaining calories or the burned/consumed balance when Apple Health is active.",
+                c2Name: "Water Ring",
+                c2Desc: "See your daily hydration progress at a glance. Always know how much water you have left.",
+                c3Name: "Protein Ring",
+                c3Desc: "Track your protein intake against your daily goal. Never lose sight of your target.",
+                compsNote: "Compatible with Infograph, Modular, California, Meridian, and more &middot; .accessoryCircular &amp; .accessoryCorner",
+                setupTitle: "How to set it up",
+                s1Title: "Download CaloriSnap",
+                s1Desc: "The Apple Watch app installs automatically alongside CaloriSnap on your iPhone. No extra steps needed.",
+                s2Title: "Set up your profile",
+                s2Desc: "Enter your calorie, water, and macro goals to see your personalized progress on the Watch.",
+                s3Title: "Add complications to your watch face",
+                s3Desc: "Long-press your watch face &rarr; tap Edit &rarr; select a complication slot &rarr; find CaloriSnap and choose your ring.",
+                ctaTitle: "Download CaloriSnap for free",
+                ctaSubtitle: "Available for iPhone and Apple Watch on the App Store.",
+                footerCopy: "&copy; 2026 WiseAI Labs. All rights reserved.",
+                footerPrivacy: "Privacy Policy",
+                footerTerms: "Terms of Service",
+                footerContact: "Contact",
+            }
+        };
+
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.title = i18n[lang].pageTitle;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+            });
+
+            // Guide link
+            document.getElementById('guide-link').href = lang === 'es' ? '../guia/' : '../guide/';
+
+            // Footer links with language-specific hrefs
+            const privacyEl = document.getElementById('footer-privacy');
+            const termsEl = document.getElementById('footer-terms');
+            if (privacyEl) privacyEl.href = lang === 'es' ? '../privacy-policy.html' : '../privacy-policy-en.html';
+            if (termsEl) termsEl.href = lang === 'es' ? '../terms-of-service.html' : '../terms-of-service-en.html';
+
+            // Footer copyright
+            const footerCopy = document.getElementById('footer-copy');
+            if (footerCopy) footerCopy.innerHTML = i18n[lang].footerCopy;
+
+            localStorage.setItem('cs-lang', lang);
+        }
+
+        // Detect language preference
+        const saved = localStorage.getItem('cs-lang');
+        const browserLang = navigator.language && navigator.language.startsWith('es') ? 'es' : 'en';
+        setLang(saved || browserLang);
+    </script>
+
+</body>
+</html>
