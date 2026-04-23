@@ -841,10 +841,11 @@
             localStorage.setItem('cs-lang', lang);
         }
 
-        // Detect language preference
+        // Detect language preference (URL param > localStorage > browser)
+        const urlLang = new URLSearchParams(window.location.search).get('lang');
         const saved = localStorage.getItem('cs-lang');
         const browserLang = navigator.language && navigator.language.startsWith('es') ? 'es' : 'en';
-        setLang(saved || browserLang);
+        setLang(urlLang || saved || browserLang);
     </script>
 
 </body>
