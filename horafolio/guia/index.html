@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoraFolio - Guía de inicio</title>
+    <meta name="description" content="Guía de inicio de HoraFolio: registra tu empresa, invita a tus trabajadores, marca la asistencia, usa el kiosco y exporta para tu nómina.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0F1B2D;
+            --mist: #F1F4F7;
+            --teal: #0F766E;
+            --teal-soft: #E6F2F1;
+            --text: #1F2933;
+            --muted: #52606D;
+            --border: #D9E2EC;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--mist);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 48px 16px 40px;
+            text-align: center;
+        }
+        header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; }
+        header p { color: #C3CFDB; margin-top: 8px; font-size: 1.05rem; }
+
+        main { max-width: 820px; margin: 0 auto; padding: 32px 16px 48px; }
+
+        nav.toc {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 28px;
+        }
+        nav.toc strong { display: block; margin-bottom: 8px; color: var(--navy); }
+        nav.toc ol { padding-left: 20px; }
+        nav.toc a { color: var(--teal); text-decoration: none; }
+        nav.toc a:hover { text-decoration: underline; }
+
+        section {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        section h2 {
+            color: var(--navy);
+            font-size: 1.35rem;
+            margin-bottom: 4px;
+        }
+        section .who { color: var(--muted); font-size: 0.92rem; margin-bottom: 14px; }
+        section p { margin-bottom: 12px; }
+        section ol, section ul { padding-left: 22px; margin-bottom: 12px; }
+        section li { margin-bottom: 6px; }
+
+        .btn {
+            display: inline-block;
+            background: var(--teal-soft);
+            color: var(--teal);
+            border: 1px solid #B7D8D5;
+            border-radius: 6px;
+            padding: 0 6px;
+            font-weight: 600;
+            font-size: 0.95em;
+            white-space: nowrap;
+        }
+        .screen { font-weight: 600; color: var(--navy); }
+
+        .tip {
+            background: var(--teal-soft);
+            border-left: 4px solid var(--teal);
+            border-radius: 6px;
+            padding: 10px 14px;
+            margin: 10px 0 4px;
+            font-size: 0.95rem;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 6px 0 12px; font-size: 0.95rem; }
+        th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        th { color: var(--navy); background: var(--mist); }
+
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding: 8px 16px 40px;
+        }
+        footer a { color: var(--teal); }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.7rem; }
+            section { padding: 18px; }
+            .btn { white-space: normal; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HoraFolio</h1>
+        <p>Guía de inicio</p>
+    </header>
+
+    <main>
+        <nav class="toc">
+            <strong>Contenido</strong>
+            <ol>
+                <li><a href="#entrar">Descarga y entra</a></li>
+                <li><a href="#empresa">Registra tu empresa</a></li>
+                <li><a href="#empleados">Agrega e invita a tus trabajadores</a></li>
+                <li><a href="#marcar">Marca tu asistencia</a></li>
+                <li><a href="#historial">Revisa y corrige tus registros</a></li>
+                <li><a href="#kiosco">Usa un kiosco (opcional)</a></li>
+                <li><a href="#dia">El día a día del administrador</a></li>
+                <li><a href="#reglas">Cómo cuida HoraFolio tus registros</a></li>
+            </ol>
+        </nav>
+
+        <section id="entrar">
+            <h2>1. Descarga y entra</h2>
+            <p class="who">Para todos</p>
+            <ol>
+                <li>Instala HoraFolio desde Google Play en tu teléfono Android, o entra desde la computadora en <a href="https://horafolio.mx/app">horafolio.mx/app</a>.</li>
+                <li>Escribe tu correo electrónico y toca <span class="btn">Enviar código</span>.</li>
+                <li>Revisa tu correo, escribe el código de 6 dígitos y toca <span class="btn">Entrar</span>. No necesitas contraseña.</li>
+                <li>Lee y acepta el aviso de privacidad.</li>
+            </ol>
+        </section>
+
+        <section id="empresa">
+            <h2>2. Registra tu empresa</h2>
+            <p class="who">Para el dueño</p>
+            <ol>
+                <li>Toca <span class="btn">Registrar mi empresa</span>, escribe el nombre de la empresa, el RFC (opcional) y elige tu zona horaria.</li>
+                <li>En <span class="screen">Empresa</span> abre <span class="btn">Datos de la empresa y zona de trabajo</span> y marca la ubicación de tu centro de trabajo y el radio de la zona.</li>
+                <li>En <span class="btn">Horarios</span> crea los horarios de tu equipo; en <span class="btn">Días festivos</span> revisa los del año.</li>
+                <li>En <span class="btn">Convenio y aviso de privacidad</span> revisa las plantillas, ajústalas y publícalas. Tus trabajadores las aceptan desde su app.</li>
+            </ol>
+            <div class="tip">Un radio de 50 a 100 metros suele funcionar mejor que uno muy pequeño: el GPS del teléfono puede variar algunos metros.</div>
+        </section>
+
+        <section id="empleados">
+            <h2>3. Agrega e invita a tus trabajadores</h2>
+            <p class="who">Para el dueño o administrador</p>
+            <ol>
+                <li>En <span class="screen">Empleados</span> toca <span class="btn">Agregar empleado</span> y captura su nombre completo, su clave de nómina y dónde trabaja.</li>
+                <li>En su ficha toca <span class="btn">Generar invitación</span> y luego <span class="btn">Compartir invitación</span> para mandarle el enlace por WhatsApp o correo. La invitación tiene fecha de vencimiento.</li>
+                <li>El trabajador abre el enlace, entra con su correo y su cuenta queda vinculada. También puede escribir el código de invitación en la pantalla <span class="screen">Vincula tu cuenta</span>.</li>
+            </ol>
+            <table>
+                <tr><th>Dónde trabaja</th><th>Qué pasa al marcar</th></tr>
+                <tr><td>Centro de trabajo</td><td>Se guarda la ubicación y se revisa si está dentro de la zona.</td></tr>
+                <tr><td>Campo</td><td>Se guarda la ubicación, sin exigir que esté dentro de la zona.</td></tr>
+                <tr><td>Teletrabajo</td><td>No se pide ni se guarda la ubicación.</td></tr>
+            </table>
+            <div class="tip">¿Tú también marcas tu asistencia? En <span class="screen">Empresa</span> usa la tarjeta <strong>¿También marcas tu asistencia?</strong> para vincularte a tu propia ficha.</div>
+        </section>
+
+        <section id="marcar">
+            <h2>4. Marca tu asistencia</h2>
+            <p class="who">Para el trabajador</p>
+            <p>En la pestaña <span class="screen">Marcar</span> toca el botón que corresponda:</p>
+            <ul>
+                <li><span class="btn">Llegué</span> al empezar tu jornada.</li>
+                <li><span class="btn">Voy a comer</span> y <span class="btn">Regresé de comer</span> para tu tiempo de comida.</li>
+                <li><span class="btn">Salida</span> al terminar.</li>
+            </ul>
+            <p>La hora la pone el servidor, no tu teléfono. Tu ubicación solo se toma en el momento de marcar, nunca en segundo plano.</p>
+            <div class="tip">Si marcas sin conexión, la marca se guarda en tu teléfono y se envía cuando vuelva la señal, con la hora en que la hiciste.</div>
+        </section>
+
+        <section id="historial">
+            <h2>5. Revisa y corrige tus registros</h2>
+            <p class="who">Para el trabajador</p>
+            <ul>
+                <li>En <span class="screen">Historial</span> ves tus registros de los últimos 14 días.</li>
+                <li>Si un registro está mal, tócalo para pedir que se corrija. Si te faltó una marca, toca <span class="btn">Reportar una marca que falta</span>. Tu empresa aprueba o rechaza la solicitud.</li>
+                <li>Con <span class="btn">Descargar (CSV)</span> te llevas una copia de tus registros cuando quieras.</li>
+            </ul>
+        </section>
+
+        <section id="kiosco">
+            <h2>6. Usa un kiosco (opcional)</h2>
+            <p class="who">Para empresas con una tableta compartida en la entrada</p>
+            <ol>
+                <li>En <span class="screen">Empresa</span> abre <span class="btn">Kioscos (tabletas para marcar)</span> y toca <span class="btn">Generar código de registro</span>.</li>
+                <li>En la tableta abre HoraFolio, toca <span class="btn">Usar este dispositivo como kiosco</span> y escanea el código QR o escribe el código de 8 caracteres.</li>
+                <li>Cada trabajador busca su nombre y escribe su PIN, o usa su gafete. Si no tiene PIN, lo crea en su app (<span class="screen">Perfil</span>) o le das uno temporal desde su ficha.</li>
+            </ol>
+            <div class="tip">Para dejar de usar la tableta como kiosco, mantén presionado 5 segundos el nombre de la empresa en la parte de arriba y confirma.</div>
+        </section>
+
+        <section id="dia">
+            <h2>7. El día a día del administrador</h2>
+            <p class="who">Para el dueño o administrador</p>
+            <ul>
+                <li><span class="screen">Hoy</span>: quién está trabajando, quién ya salió, quién no ha registrado y los retardos del día.</li>
+                <li><span class="screen">Pendientes</span>: jornadas sin salida, solicitudes de corrección y marcas por validar.</li>
+                <li><span class="btn">Exportar (nómina, resumen, marcas)</span>: resumen diario, incidencias del periodo (retardos, faltas, horas extra) o todas las marcas, en Excel o CSV. Con las plantillas ajustas columnas y formato a lo que pide tu programa de nómina.</li>
+                <li><span class="btn">Ausencias (vacaciones, incapacidades, permisos)</span> para que no cuenten como faltas.</li>
+                <li><span class="btn">Verificar integridad de los registros</span> comprueba que ningún registro haya sido alterado.</li>
+            </ul>
+        </section>
+
+        <section id="reglas">
+            <h2>8. Cómo cuida HoraFolio tus registros</h2>
+            <ul>
+                <li>Los registros no se editan ni se borran. Una corrección es un registro nuevo que queda junto al original.</li>
+                <li>Cada registro lleva un folio y un sello de integridad encadenado; cualquier cambio se detecta al verificar.</li>
+                <li>Cada trabajador puede ver y descargar sus propios registros en todo momento.</li>
+            </ul>
+            <p>HoraFolio está diseñado para el registro electrónico de jornada (art. 132 fr. XXXIV LFT).</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>¿Dudas? Escríbenos a <a href="mailto:support@wiseailabs.com">support@wiseailabs.com</a></p>
+        <p><a href="https://horafolio.mx/privacidad/">Aviso de privacidad</a> · <a href="https://horafolio.mx/eliminar-cuenta/">Eliminar mi cuenta</a> · <a href="/">Documentos legales</a></p>
+        <p>&copy; 2026 WiseAI Labs</p>
+    </footer>
+</body>
+</html>
